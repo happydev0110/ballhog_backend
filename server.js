@@ -16,9 +16,9 @@ const app = express();
 
 // CORS Options
 const corsOptions = {
-  origin: 'https://playballhog.com', // Replace with your React app's domain
-  methods: ['GET', 'POST'], // Specify allowed methods if necessary
-  credentials: true, // Allow credentials (e.g., cookies) if needed
+  origin: 'http://playballhog.com', // Replace with your domain name
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,  // Allow credentials if needed
 };
 
 app.use(cors(corsOptions));
