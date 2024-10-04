@@ -16,7 +16,7 @@ const app = express();
 
 // CORS Options
 const corsOptions = {
-  origin: 'https://your-react-app-domain.com', // Replace with your React app's domain
+  origin: 'https://playballhog.com', // Replace with your React app's domain
   methods: ['GET', 'POST'], // Specify allowed methods if necessary
   credentials: true, // Allow credentials (e.g., cookies) if needed
 };
