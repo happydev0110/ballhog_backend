@@ -16,7 +16,7 @@ const app = express();
 
 app.use(cors());
 app.use(cors({
-  origin: 'https://ballhog-d6311a75b183.herokuapp.com/'  // Allow only your frontend
+  origin: 'https://ballhog-d6311a75b183.herokuapp.com'  // Allow only your frontend
 }));
 app.use(express.json());
 // use routes
