@@ -8,7 +8,6 @@
     "start": "nodemon server.js",
     "test": "npm start"
   },
-  "proxy": "http://10.254.62.146:443",
   "author": "",
   "license": "ISC",
   "dependencies": {
