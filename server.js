@@ -14,14 +14,13 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = express();
 
-// Middleware
 const corsOptions = {
   origin: 'https://playballhog.com', // Replace with your React app's domain
   methods: ['GET', 'POST'], // Specify allowed methods if necessary
   credentials: true, // Allow credentials (e.g., cookies) if needed
 };
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 // use routes
 app.use('/api', userRoutes);
