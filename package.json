@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "proxy": "https://ballhog-d6311a75b183.herokuapp.com/",
+
   "scripts": {
     "start": "nodemon server.js",
     "test": "npm start"

@@ -14,14 +14,10 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = express();
 
-// CORS Options
-const corsOptions = {
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,  // Allow credentials if needed
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
+app.use(cors({
+  origin: 'https://ballhog-d6311a75b183.herokuapp.com/'  // Allow only your frontend
+}));
 app.use(express.json());
 // use routes
 app.use('/api', userRoutes);
