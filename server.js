@@ -2,7 +2,6 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-
 import { join } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -15,12 +14,17 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = express();
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
+// Middleware
+const corsOptions = {
+  origin: 'https://playballhog.com', // Replace with your React app's domain
+  methods: ['GET', 'POST'], // Specify allowed methods if necessary
+  credentials: true, // Allow credentials (e.g., cookies) if needed
+};
+
+app.use(cors(corsOptions));
+app.use(express.json());
+// use routes
+app.use('/api', userRoutes);
 
 // Required to handle the path for ES module usage
 const __filename = fileURLToPath(import.meta.url);
@@ -34,20 +38,12 @@ app.get('*', (req, res) => {
   res.sendFile(join(__dirname, 'build', 'index.html'));
 });
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-// use routes
-app.use('/api', userRoutes);
-
-
 // app.get('/test', (req, res) => {
 //   res.json({ message: 'Server is running' });
 // });
 
 // MongoDB Connection
 connectDB();
-
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
