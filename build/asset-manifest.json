@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.32569b7a.css",
-    "main.js": "/static/js/main.64af00f2.js",
+    "main.js": "/static/js/main.dfae8ab0.js",
     "static/js/453.b1a1c61d.chunk.js": "/static/js/453.b1a1c61d.chunk.js",
     "static/media/mls_logo.png": "/static/media/mls_logo.7967f06841aef61e3bc6.png",
     "static/media/nhl_logo.png": "/static/media/nhl_logo.bf94e0e0c8f2d53181ee.png",
@@ -12,11 +12,11 @@
     "static/media/Varsity-Team-Bold.ttf.woff": "/static/media/Varsity-Team-Bold.ttf.24cd6f77cc03cbcacd7c.woff",
     "index.html": "/index.html",
     "main.32569b7a.css.map": "/static/css/main.32569b7a.css.map",
-    "main.64af00f2.js.map": "/static/js/main.64af00f2.js.map",
+    "main.dfae8ab0.js.map": "/static/js/main.dfae8ab0.js.map",
     "453.b1a1c61d.chunk.js.map": "/static/js/453.b1a1c61d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.32569b7a.css",
-    "static/js/main.64af00f2.js"
+    "static/js/main.dfae8ab0.js"
   ]
 }

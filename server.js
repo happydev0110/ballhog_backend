@@ -25,6 +25,24 @@ app.use(express.json());
 // use routes
 app.use('/api', userRoutes);
 
+app.get('/api/espn', async (req, res) => {
+  try {
+    // Make a request to the ESPN API
+    const { url, event } = req.query;
+    const response = await axios.get(url, {
+      params: {
+        event
+      },  // Pass along any query params
+    });
+
+    // Send the ESPN API response back to the frontend
+    res.json(response.data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error fetching data from ESPN API' });
+  }
+});
+
 // Required to handle the path for ES module usage
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
