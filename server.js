@@ -16,7 +16,11 @@ const app = express();
 
 // CORS Options
 const corsOptions = {
-  origin: 'warm-chimpanzee-70wgr73s4vg2i3ftp8p4ju30.herokudns.com', // Replace with your domain name
+  origin: [
+    'https://ballhog-87d4f254b843.herokuapp.com', // Heroku domain
+    'https://www.playballhog.com',                // Your custom domain
+    'https://playballhog.com',                     // Non-www version
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,  // Allow credentials if needed
 };
