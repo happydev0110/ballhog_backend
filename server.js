@@ -14,8 +14,9 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = express();
 
+// CORS Options
 const corsOptions = {
-  origin: 'https://playballhog.com', // Replace with your React app's domain
+  origin: 'https://your-react-app-domain.com', // Replace with your React app's domain
   methods: ['GET', 'POST'], // Specify allowed methods if necessary
   credentials: true, // Allow credentials (e.g., cookies) if needed
 };
@@ -24,24 +25,6 @@ app.use(cors(corsOptions));
 app.use(express.json());
 // use routes
 app.use('/api', userRoutes);
-
-app.get('/api/espn', async (req, res) => {
-  try {
-    // Make a request to the ESPN API
-    const { url, event } = req.query;
-    const response = await axios.get(url, {
-      params: {
-        event
-      },  // Pass along any query params
-    });
-
-    // Send the ESPN API response back to the frontend
-    res.json(response.data);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: 'Error fetching data from ESPN API' });
-  }
-});
 
 // Required to handle the path for ES module usage
 const __filename = fileURLToPath(import.meta.url);
