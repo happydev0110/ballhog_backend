@@ -14,6 +14,14 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = express();
 
+app.use((req, res, next) => {
+  if (req.header('x-forwarded-proto') !== 'https') {
+    res.redirect(`https://${req.header('host')}${req.url}`);
+  } else {
+    next();
+  }
+});
+
 // app.use(cors());
 app.use(cors({
   origin: 'https://ballhog-d6311a75b183.herokuapp.com',
