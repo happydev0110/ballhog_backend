@@ -23,11 +23,6 @@ app.use((req, res, next) => {
 });
 
 app.use(cors());
-// app.use(cors({
-//   origin: 'https://ballhog-d6311a75b183.herokuapp.com',
-//   credentials: true,
-// }));
-
 app.use(express.json());
 // use routes
 app.use('/api', userRoutes);
