@@ -14,10 +14,17 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = express();
 
-app.use(cors());
+// app.use(cors());
+// app.use(cors({
+//   origin: 'https://ballhog-d6311a75b183.herokuapp.com'  // Allow only your frontend
+// }));
+
 app.use(cors({
-  origin: 'https://ballhog-d6311a75b183.herokuapp.com'  // Allow only your frontend
-}));
+  origin: ["https://ballhog-d6311a75b183.herokuapp.com"],
+  methods: ["GET", "POST", "DELETE"],
+  credentials: true,
+  origin: true,
+}))
 app.use(express.json());
 // use routes
 app.use('/api', userRoutes);
