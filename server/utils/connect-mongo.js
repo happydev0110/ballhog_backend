@@ -3,9 +3,12 @@ import mongoose from 'mongoose';
 const connectDB = async () => {
     try {
         mongoose.set("strictQuery", false);
-        const dbURI = process.env.MONGODB_URI;
+        const dbURI = process.env.MONGODB_URI + process.env.DB_NAME;
 
-        const options = {};
+        const options = {
+            // useNewUrlParser: true,
+            // useUnifiedTopology: true,
+        };
 
         await mongoose.connect(dbURI, options);
 

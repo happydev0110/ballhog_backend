@@ -6,7 +6,7 @@ import { join } from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
-import userRoutes from './server/routes/userRoutes.js';
+import Routes from './server/routes/index.js';
 import connectDB from './server/utils/connect-mongo.js';
 
 dotenv.config();
@@ -14,18 +14,18 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = express();
 
-app.use((req, res, next) => {
-  if (req.header('x-forwarded-proto') !== 'https') {
-    res.redirect(`https://${req.header('host')}${req.url}`);
-  } else {
-    next();
-  }
-});
+// app.use((req, res, next) => {
+//   if (req.header('x-forwarded-proto') !== 'https') {
+//     res.redirect(`https://${req.header('host')}${req.url}`);
+//   } else {
+//     next();
+//   }
+// });
 
 app.use(cors());
 app.use(express.json());
 // use routes
-app.use('/api', userRoutes);
+app.use('/api', Routes);
 
 // Required to handle the path for ES module usage
 const __filename = fileURLToPath(import.meta.url);
@@ -38,10 +38,6 @@ app.use(express.static(join(__dirname, 'build')));
 app.get('*', (req, res) => {
   res.sendFile(join(__dirname, 'build', 'index.html'));
 });
-
-// app.get('/test', (req, res) => {
-//   res.json({ message: 'Server is running' });
-// });
 
 // MongoDB Connection
 connectDB();
