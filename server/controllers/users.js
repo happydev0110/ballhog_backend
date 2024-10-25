@@ -10,17 +10,18 @@ export const reigster = async (req, res) => {
     
     const existingUser = await UserModel.findOne({ email }); // Changed variable name to existingUser
     if (existingUser) {
-      return res.status(400).json({ message: 'User already exists' });
+      return res.status(400).json(sendRes(false, 'User already exists'));
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new UserModel({ name, email, password: hashedPassword });
     await newUser.save();
 
-    res.json({ message: 'User registered successfully' });
+    res.json(sendRes(true, 'Registe Success'));
   } catch (error) {
     console.error(error);
-    res.json({ message: 'Internal server error' });
+    // res.json({ message: 'Internal server error' });
+    res.json(sendRes(false, 'Internal server error'))
   }
 }
 
@@ -31,13 +32,14 @@ export const login = async (req, res) => {
     // Check if user exists
     const user = await UserModel.findOne({ email });
     if (!user) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+      // return res.status(401).json({ message: 'Invalid credentials' });
+      return res.status(401).json(sendRes(false, 'Invalid credentials'));
     }
 
     // Compare passwords
     const passwordMatch = await bcrypt.compare(password, user.password);
     if (!passwordMatch) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+      return res.status(401).json(sendRes(false, 'Invalid credentials'));
     }
 
     // Generate JWT token
@@ -45,10 +47,12 @@ export const login = async (req, res) => {
       expiresIn: '1h',
     });
 
-    res.json({ token, email });
+    // res.json({ token, email });
+    res.json(sendRes(true, 'Login success', { token, email }));
   } catch (error) {
     console.error(error);
-    res.json({ message: 'Internal server error' });
+    // res.json({ message: 'Internal server error' });
+    res.json(sendRes(false, 'Internal server error'));
   }
 }
 
