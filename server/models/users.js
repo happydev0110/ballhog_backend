@@ -13,12 +13,9 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: true,
     },
     phoneNumber: {
       type: String,
-      unique: true,
-      default: ''
     },
     balance: {
       type: Number,
@@ -28,23 +25,15 @@ const userSchema = new mongoose.Schema(
     payment:{
       venmo: {
         type: String,
-        unique: true,
-        default: ''
       },
       paypal: {
         type: String,
-        unique: true,
-        default: ''
       },
       cashApp: {
         type: String,
-        unique: true,
-        default: ''
       },
       zelle: {
         type: String,
-        unique: true,
-        default: ''
       }
     }
   },
