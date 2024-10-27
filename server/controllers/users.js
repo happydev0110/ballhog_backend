@@ -48,7 +48,7 @@ export const login = async (req, res) => {
     });
 
     // res.json({ token, email });
-    res.json(sendRes(true, 'Login success', { token, email }));
+    res.json(sendRes(true, 'Login success', { token, user }));
   } catch (error) {
     console.error(error);
     // res.json({ message: 'Internal server error' });

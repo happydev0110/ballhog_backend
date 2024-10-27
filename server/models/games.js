@@ -5,7 +5,6 @@ const gameSchema = new mongoose.Schema(
     player: {
       type: Schema.ObjectId,
       required: true,
-      unique: true,
       ref: 'user'
     },
     sportCategory: {
@@ -14,6 +13,10 @@ const gameSchema = new mongoose.Schema(
     },
     point: {
       type: Number,
+      require: true
+    },
+    selectedTeam:{
+      type: String,
       require: true
     }
   },
