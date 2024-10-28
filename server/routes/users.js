@@ -12,12 +12,12 @@ userRouter.post('/register', UserCtrl.reigster);
 // User Login
 userRouter.post('/login', UserCtrl.login);
 
-userRouter.get('/', UserCtrl.getUser);
-userRouter.post('/', UserCtrl.addUser);
-userRouter.put('/', UserCtrl.updateOneUser);
-userRouter.put('/many', UserCtrl.updateManyUsers);
-userRouter.delete('/', UserCtrl.deleteOneUser);
-userRouter.delete('/many', UserCtrl.deleteManyUsers);
+userRouter.get('/users', UserCtrl.getUser);
+userRouter.post('/users', UserCtrl.addUser);
+userRouter.put('/users', UserCtrl.updateOneUser);
+userRouter.put('/users/many', UserCtrl.updateManyUsers);
+userRouter.delete('/users', UserCtrl.deleteOneUser);
+userRouter.delete('/users/many', UserCtrl.deleteManyUsers);
 
 export default userRouter;
 
