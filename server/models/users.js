@@ -25,15 +25,19 @@ const userSchema = new mongoose.Schema(
     payment:{
       venmo: {
         type: String,
+        default: ''
       },
       paypal: {
         type: String,
+        default: ''
       },
       cashApp: {
         type: String,
+        default: ''
       },
       zelle: {
         type: String,
+        default: ''
       }
     }
   },
