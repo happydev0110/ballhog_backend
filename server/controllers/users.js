@@ -7,7 +7,7 @@ export const reigster = async (req, res) => {
   try {
     const { name, email, password } = req.body;
     console.log(name, email, password, 'user info')
-    
+
     const existingUser = await UserModel.findOne({ email }); // Changed variable name to existingUser
     if (existingUser) {
       return res.status(400).json(sendRes(false, 'User already exists'));
@@ -57,87 +57,89 @@ export const login = async (req, res) => {
 }
 
 export const getUser = async (req, res) => {
-    let searchKey = {
-        ...req.params
-    }
+  let searchKey = {
+    ...req.params
+  }
 
-    try {
-        let response = await UserModel.find(searchKey);
-        const result = sendRes(true, "success", response.data)
-        res.json(result);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json(sendRes(false, error));
-    }
+  try {
+    let response = await UserModel.find(searchKey);
+    const result = sendRes(true, "success", response.data)
+    res.json(result);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(sendRes(false, error));
+  }
 }
 
 export const addUser = async (req, res) => {
-    let data = new UserModel({ ...req.body });
+  let data = new UserModel({ ...req.body });
 
-    try {
-        let response = await data.save();
-        const result = sendRes(true, "success", response)
-        res.json(result);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json(sendRes(false, error));
-    }
+  try {
+    let response = await data.save();
+    const result = sendRes(true, "success", response)
+    res.json(result);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(sendRes(false, error));
+  }
 }
 
 export const updateManyUsers = async (req, res) => {
-    const { search, modify } = req.body;
+  const { search, modify } = req.body;
 
-    let searchKey = { ...search };
-    let modifyData = { ...modify };
+  let searchKey = { ...search };
+  let modifyData = { ...modify };
 
-    try {
-        let response = await UserModel.updateMany(searchKey, modifyData);
-        const result = sendRes(true, "success", response.data)
-        res.json(result);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json(sendRes(false, error));
-    }
+  try {
+    let response = await UserModel.updateMany(searchKey, modifyData);
+    const result = sendRes(true, "success", response.data)
+    res.json(result);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(sendRes(false, error));
+  }
 }
 
 export const updateOneUser = async (req, res) => {
-    const { search, modify } = req.body;
+  const { search, modify } = req.body;
 
-    let searchKey = { ...search };
-    let modifyData = { ...modify };
+  let searchKey = { ...search };
+  let modifyData = { ...modify };
 
-    try {
-        let response = await UserModel.updateOne(searchKey, modifyData);
-        const result = sendRes(true, "success", response.data)
-        res.json(result);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json(sendRes(false, error));
-    }
+  // console.log(searchKey, modifyData)
+  try {
+    await UserModel.updateOne(searchKey, modifyData, { returnDocument: 'after' });
+    const updateDoc = await UserModel.findOne(search);
+    const result = sendRes(true, "success", updateDoc)
+    res.json(result);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(sendRes(false, error));
+  }
 }
 
 export const deleteManyUsers = async (req, res) => {
-    let searchKey = { ...req.body };
+  let searchKey = { ...req.body };
 
-    try {
-        let response = await UserModel.deleteMany(searchKey);
-        const result = sendRes(true, "success", response.data)
-        res.json(result);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json(sendRes(false, error));
-    }
+  try {
+    let response = await UserModel.deleteMany(searchKey);
+    const result = sendRes(true, "success", response.data)
+    res.json(result);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(sendRes(false, error));
+  }
 }
 
 export const deleteOneUser = async (req, res) => {
-    let searchKey = { ...req.body };
+  let searchKey = { ...req.body };
 
-    try {
-        let response = await UserModel.deleteOne(searchKey);
-        const result = sendRes(true, "success", response.data)
-        res.json(result);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json(sendRes(false, error));
-    }
+  try {
+    let response = await UserModel.deleteOne(searchKey);
+    const result = sendRes(true, "success", response.data)
+    res.json(result);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(sendRes(false, error));
+  }
 }

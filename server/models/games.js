@@ -6,6 +6,9 @@ const gameSchema = new mongoose.Schema(
       type: Schema.ObjectId,
       ref: 'user'
     },
+    event: {
+      type: String
+    },
     sportCategory: {
       type: String,
     },
@@ -13,7 +16,11 @@ const gameSchema = new mongoose.Schema(
       type: Number,
     },
     selectedTeam:{
-      type: String,
+      type: Number,
+    },
+    win: {
+      type: Boolean,
+      default: false
     }
   },
   {
