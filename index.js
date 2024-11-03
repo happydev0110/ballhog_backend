@@ -8,13 +8,15 @@ import { dirname } from 'path';
 
 import Routes from './server/routes/index.js';
 import connectDB from './server/utils/connect-mongo.js';
-import sslRedirect from 'heroku-ssl-redirect';
-
+// import sslRedirect from 'heroku-ssl-redirect';
+const { default: sslRedirect } = await import('heroku-ssl-redirect');
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
 const app = express();
 
+// app.use(sslRedirect());
+app.use(sslRedirect.default());
 app.use((req, res, next) => {
   if (req.header('x-forwarded-proto') !== 'https') {
     res.redirect(`https://${req.header('host')}${req.url}`);
@@ -23,7 +25,6 @@ app.use((req, res, next) => {
   }
 });
 
-app.use(sslRedirect());
 app.use(cors());
 app.use(express.json());
 // use routes
