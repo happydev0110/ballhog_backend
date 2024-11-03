@@ -8,6 +8,7 @@ import { dirname } from 'path';
 
 import Routes from './server/routes/index.js';
 import connectDB from './server/utils/connect-mongo.js';
+import sslRedirect from 'heroku-ssl-redirect';
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ const app = express();
 //   }
 // });
 
+app.use(sslRedirect());
 app.use(cors());
 app.use(express.json());
 // use routes
