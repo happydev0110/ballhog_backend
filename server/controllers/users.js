@@ -42,13 +42,13 @@ export const login = async (req, res) => {
     const user = await UserModel.findOne({ email });
     if (!user) {
       // return res.status(401).json({ message: 'Invalid credentials' });
-      return res.status(401).json(sendRes(false, 'Invalid credentials'));
+      return res.json(sendRes(false, 'Email is not correct.'));
     }
 
     // Compare passwords
     const passwordMatch = await bcrypt.compare(password, user.password);
     if (!passwordMatch) {
-      return res.status(401).json(sendRes(false, 'Invalid credentials'));
+      return res.json(sendRes(false, 'Password is not correct'));
     }
 
     // Generate JWT token
@@ -60,7 +60,6 @@ export const login = async (req, res) => {
     res.json(sendRes(true, 'Login success', { token, user }));
   } catch (error) {
     console.error(error);
-    // res.json({ message: 'Internal server error' });
     res.json(sendRes(false, 'Internal server error'));
   }
 }
