@@ -8,16 +8,25 @@ export const reigster = async (req, res) => {
     const { name, email, password } = req.body;
     console.log(name, email, password, 'user info')
 
-    const existingUser = await UserModel.findOne({ email }); // Changed variable name to existingUser
-    if (existingUser) {
-      return res.status(400).json(sendRes(false, 'User already exists'));
+    const existingUserName = await UserModel.findOne({ name }); // Changed variable name to existingUser
+    if (existingUserName) {
+      return res.json(sendRes(false, 'User Name already exists'));
+    }
+
+    const existingUserEmail = await UserModel.findOne({ email }); // Changed variable name to existingUser
+    if (existingUserEmail) {
+      return res.json(sendRes(false, 'User Email already exists'));
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new UserModel({ name, email, password: hashedPassword });
     await newUser.save();
 
-    res.json(sendRes(true, 'Register Success'));
+    const token = jwt.sign({ email: newUser.email }, 'secret_key', {
+      expiresIn: '1h',
+    });
+
+    res.json(sendRes(true, 'Register Success', { token, user: newUser }));
   } catch (error) {
     console.error(error);
     // res.json({ message: 'Internal server error' });
