@@ -15,12 +15,15 @@ const gameSchema = new mongoose.Schema(
     point: {
       type: Number,
     },
-    selectedTeam:{
+    selectedTeam: {
       type: Number,
     },
     win: {
       type: Boolean,
       default: false
+    },
+    status: {
+      type: String
     }
   },
   {
