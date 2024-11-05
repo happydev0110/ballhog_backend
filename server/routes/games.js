@@ -2,12 +2,12 @@ import express from 'express';
 import * as GameCtrl from "../controllers/games.js";
 
 const gameRouter = express.Router();
-gameRouter.get('/', GameCtrl.getUser);
-gameRouter.post('/', GameCtrl.addUser);
-gameRouter.put('/', GameCtrl.updateOneUser);
-gameRouter.put('/many', GameCtrl.updateManyUsers);
-gameRouter.delete('/', GameCtrl.deleteOneUser);
-gameRouter.delete('/many', GameCtrl.deleteManyUsers);
+gameRouter.get('/', GameCtrl.getGame);
+gameRouter.post('/', GameCtrl.addGame);
+gameRouter.put('/', GameCtrl.updateOneGame);
+gameRouter.put('/many', GameCtrl.updateManyGames);
+gameRouter.delete('/', GameCtrl.deleteOneGame);
+gameRouter.delete('/many', GameCtrl.deleteManyGames);
 
 export default gameRouter;
 
