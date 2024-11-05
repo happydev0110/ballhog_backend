@@ -4,26 +4,29 @@ const gameSchema = new mongoose.Schema(
   {
     player: {
       type: Schema.ObjectId,
-      ref: 'user'
+      ref: 'User'
     },
     event: {
       type: String
     },
     sportCategory: {
       type: String,
+      default: 'NFL'
     },
     point: {
       type: Number,
     },
-    selectedTeam: {
+    selectedTeam: {//
       type: Number,
+      default: 0
     },
-    win: {
+    win: {//true: win, false: defeat
       type: Boolean,
       default: false
     },
-    status: {
-      type: String
+    status: {//0: scheduled, 1: playing, 2: completed 
+      type: Number, 
+      default: 0
     }
   },
   {

@@ -83,6 +83,16 @@ export const addUser = async (req, res) => {
   let data = new UserModel({ ...req.body });
 
   try {
+    const existingUserName = await UserModel.findOne({ name: { $regex: req.body.name } }); // Changed variable name to existingUser
+    if (existingUserName) {
+      return res.json(sendRes(false, 'User Name already exists'));
+    }
+
+    const existingUserEmail = await UserModel.findOne({ email: req.body.email }); // Changed variable name to existingUser
+    if (existingUserEmail) {
+      return res.json(sendRes(false, 'User Email already exists'));
+    }
+
     let response = await data.save();
     const result = sendRes(true, "success", response)
     res.json(result);
@@ -114,7 +124,7 @@ export const updateOneUser = async (req, res) => {
   let searchKey = { ...search };
   let modifyData = { ...modify };
 
-  // console.log(searchKey, modifyData)
+  console.log(searchKey, modifyData)
   try {
     await UserModel.updateOne(searchKey, modifyData, { returnDocument: 'after' });
     const updateDoc = await UserModel.findOne(search);
