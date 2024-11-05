@@ -13,20 +13,36 @@ const gameSchema = new mongoose.Schema(
       type: String,
       default: 'NFL'
     },
-    point: {
+    teams:{
+      type: Array
+    },
+    entryPoint: {
       type: Number,
+      default: 0
+    },
+    gameDate: {
+      type: Date,
+      default: new Date()
+    },
+    winPoint: {
+      type: Number,
+      default: 0
     },
     selectedTeam: {//
       type: Number,
       default: 0
     },
-    win: {//true: win, false: defeat
-      type: Boolean,
-      default: false
+    win: {//1: win, 0: defeat, -1: not sure
+      type: Number,
+      default: -1
     },
-    status: {//0: scheduled, 1: playing, 2: completed 
-      type: Number, 
-      default: 0
+    status: {//0: scheduled, 1: pending, 2: completed 
+      type: Number,
+      default: 1
+    },
+    createdLink:{
+      type: String,
+      default: "https://www.playballhog.com/play"
     }
   },
   {
