@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.c4369a14.css",
-    "main.js": "/static/js/main.214fe198.js",
+    "main.js": "/static/js/main.27ad9649.js",
     "static/js/453.b1a1c61d.chunk.js": "/static/js/453.b1a1c61d.chunk.js",
     "static/media/mobilescreen.png": "/static/media/mobilescreen.36221979353658331798.png",
     "static/media/mls_logo.png": "/static/media/mls_logo.7967f06841aef61e3bc6.png",
@@ -66,11 +66,11 @@
     "static/media/playbutton.svg": "/static/media/playbutton.2c4f9d41d38f7b4e063dd24a2cbfe453.svg",
     "static/media/dottedline.svg": "/static/media/dottedline.0cb798bbdf1aef0be70e.svg",
     "main.c4369a14.css.map": "/static/css/main.c4369a14.css.map",
-    "main.214fe198.js.map": "/static/js/main.214fe198.js.map",
+    "main.27ad9649.js.map": "/static/js/main.27ad9649.js.map",
     "453.b1a1c61d.chunk.js.map": "/static/js/453.b1a1c61d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c4369a14.css",
-    "static/js/main.214fe198.js"
+    "static/js/main.27ad9649.js"
   ]
 }
