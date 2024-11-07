@@ -12,7 +12,8 @@ userRouter.post('/register', UserCtrl.reigster);
 // User Login
 userRouter.post('/login', UserCtrl.login);
 
-userRouter.get('/users', UserCtrl.getUser);
+userRouter.get('/users', UserCtrl.getUserOne);
+userRouter.get('/users/many', UserCtrl.getUser);
 userRouter.post('/users', UserCtrl.addUser);
 userRouter.put('/users', UserCtrl.updateOneUser);
 userRouter.put('/users/many', UserCtrl.updateManyUsers);

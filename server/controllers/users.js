@@ -66,18 +66,36 @@ export const login = async (req, res) => {
 
 export const getUser = async (req, res) => {
   let searchKey = {
-    ...req.params
+    ...req.query
   }
+  console.log(req.query, 'searchkey')
 
   try {
     let response = await UserModel.find(searchKey);
-    const result = sendRes(true, "success", response.data)
+    const result = sendRes(true, "success", response)
     res.json(result);
   } catch (error) {
     console.log(error);
     res.status(500).json(sendRes(false, error));
   }
 }
+
+export const getUserOne = async (req, res) => {
+  let searchKey = {
+    ...req.query
+  }
+  console.log(req.query, 'searchkey')
+
+  try {
+    let response = await UserModel.findOne(searchKey);
+    const result = sendRes(true, "success", response)
+    res.json(result);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(sendRes(false, error));
+  }
+}
+
 
 export const addUser = async (req, res) => {
   let data = new UserModel({ ...req.body });
