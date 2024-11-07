@@ -8,7 +8,7 @@ export const reigster = async (req, res) => {
     const { name, email, password } = req.body;
     console.log(name, email, password, 'user info')
 
-    const existingUserName = await UserModel.findOne({ name }); // Changed variable name to existingUser
+    const existingUserName = await UserModel.findOne({ name }).collation({ locale: 'en', strength: 2 }); // Changed variable name to existingUser
     if (existingUserName) {
       return res.json(sendRes(false, 'User Name already exists'));
     }
@@ -68,7 +68,7 @@ export const getUser = async (req, res) => {
   let searchKey = {
     ...req.query
   }
-  console.log(req.query, 'searchkey')
+  // console.log(req.query, 'searchkey')
 
   try {
     let response = await UserModel.find(searchKey);
@@ -84,7 +84,7 @@ export const getUserOne = async (req, res) => {
   let searchKey = {
     ...req.query
   }
-  console.log(req.query, 'searchkey')
+  // console.log(req.query, 'searchkey')
 
   try {
     let response = await UserModel.findOne(searchKey);
@@ -101,7 +101,7 @@ export const addUser = async (req, res) => {
   let data = new UserModel({ ...req.body });
 
   try {
-    const existingUserName = await UserModel.findOne({ name: { $regex: req.body.name } }); // Changed variable name to existingUser
+    const existingUserName = await UserModel.findOne({ name: req.body.name }); // Changed variable name to existingUser
     if (existingUserName) {
       return res.json(sendRes(false, 'User Name already exists'));
     }
