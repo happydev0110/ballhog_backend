@@ -42,7 +42,7 @@ const gameSchema = new mongoose.Schema(
     },
     createdLink:{
       type: String,
-      default: "https://www.playballhog.com/play"
+      default: "https://www.playballhog.com/playGames"
     }
   },
   {
