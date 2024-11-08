@@ -1,14 +1,27 @@
 import GameModel from '../models/games.js';
 import { sendRes } from "../utils/common.js";
 
-export const getGame = async (req, res) => {
+export const getGameOne = async (req, res) => {
   let searchKey = {
-    ...req.params
+    ...req.query
   }
-
   try {
-    let response = await GameModel.find(searchKey);
-    const result = sendRes(true, "success", response.data)
+    let response = await GameModel.findOne(searchKey).populate('player');
+    const result = sendRes(true, "success", response)
+    res.json(result);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(sendRes(false, error));
+  }
+}
+
+export const getGames = async (req, res) => {
+  let searchKey = {
+    ...req.query
+  }
+  try {
+    let response = await GameModel.find(searchKey).populate('player');
+    const result = sendRes(true, "success", response)
     res.json(result);
   } catch (error) {
     console.log(error);
