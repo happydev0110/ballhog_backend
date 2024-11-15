@@ -32,6 +32,10 @@ const gameSchema = new mongoose.Schema(
       type: Number,
       default: 0
     },
+    startPos: {//
+      type: Number,
+      default: 0
+    },
     win: {//1: win, 0: defeat, -1: not sure
       type: Number,
       default: -1
