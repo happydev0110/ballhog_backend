@@ -15,7 +15,7 @@ export const reigster = async (req, res) => {
 
     const existingUserEmail = await UserModel.findOne({ email }); // Changed variable name to existingUser
     if (existingUserEmail) {
-      return res.json(sendRes(false, 'User Email already exists'));
+      return res.json(sendRes(false, 'Phone Number already exists'));
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
@@ -42,7 +42,7 @@ export const login = async (req, res) => {
     const user = await UserModel.findOne({ email });
     if (!user) {
       // return res.status(401).json({ message: 'Invalid credentials' });
-      return res.json(sendRes(false, 'Email is not correct.'));
+      return res.json(sendRes(false, 'Phone Number is not correct.'));
     }
 
     // Compare passwords
