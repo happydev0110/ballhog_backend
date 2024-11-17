@@ -9,7 +9,7 @@ export const getAllScoringRules = async (req, res) => {
   
     try {
         let response = await sportsModel.find({});
-        console.log(response)
+        // console.log(response)
         const result = sendRes(true, "success", response);
         res.json(result);
     } catch (error) {
