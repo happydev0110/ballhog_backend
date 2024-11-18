@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6cf78eb5.css",
-    "main.js": "/static/js/main.0b52a609.js",
+    "main.css": "/static/css/main.5d619066.css",
+    "main.js": "/static/js/main.6adcc690.js",
     "static/js/453.f6abbd88.chunk.js": "/static/js/453.f6abbd88.chunk.js",
     "static/media/mobilescreen.png": "/static/media/mobilescreen.36221979353658331798.png",
     "static/media/mls_logo.png": "/static/media/mls_logo.7967f06841aef61e3bc6.png",
@@ -66,12 +66,12 @@
     "static/media/playbutton.svg": "/static/media/playbutton.2c4f9d41d38f7b4e063dd24a2cbfe453.svg",
     "static/media/arrow_top_right.svg": "/static/media/arrow_top_right.281c73769d0bcc7a643d7617785289d2.svg",
     "static/media/dottedline.svg": "/static/media/dottedline.0cb798bbdf1aef0be70e.svg",
-    "main.6cf78eb5.css.map": "/static/css/main.6cf78eb5.css.map",
-    "main.0b52a609.js.map": "/static/js/main.0b52a609.js.map",
+    "main.5d619066.css.map": "/static/css/main.5d619066.css.map",
+    "main.6adcc690.js.map": "/static/js/main.6adcc690.js.map",
     "453.f6abbd88.chunk.js.map": "/static/js/453.f6abbd88.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6cf78eb5.css",
-    "static/js/main.0b52a609.js"
+    "static/css/main.5d619066.css",
+    "static/js/main.6adcc690.js"
   ]
 }

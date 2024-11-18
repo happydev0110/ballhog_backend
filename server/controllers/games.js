@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import GameModel from '../models/games.js';
 import { sendRes } from "../utils/common.js";
 
@@ -15,10 +16,38 @@ export const getGameOne = async (req, res) => {
   }
 }
 
+export const getTotalEntryPoints = async (req, res) => {
+  const { player, win } = req.query;
+  try {
+    let response = await GameModel.aggregate([
+      {
+        $match: {
+          player: new mongoose.Types.ObjectId(player),
+          win: parseInt(win)
+        }
+      },
+      {
+        $group: {
+          _id: null, // No grouping key, as we want the sum for all matched documents
+          totalEntryPoints: { $sum: "$entryPoint" } // Summing the `entryPoint` field
+        }
+      }
+    ]);
+
+    const totalEntryPoints = response.length > 0 ? response[0].totalEntryPoints : 0;
+    const result = sendRes(true, "success", { totalEntryPoints })
+    res.json(result);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json(sendRes(false, error));
+  }
+}
+
 export const getGames = async (req, res) => {
   let searchKey = {
     ...req.query
   }
+
   try {
     let response = await GameModel.find(searchKey).populate('player');
     const result = sendRes(true, "success", response)

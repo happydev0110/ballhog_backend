@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema(
     password: { type: String },
     phoneNumber: { type: String, default: '123-456-7890' }, // Removed unique constraint
     balance: { type: Number, required: true, default: 0 },
+    creditLimit: { type: Number, required: true, default: 50 },
     payment: {
       venmo: { type: String, default: '' },
       paypal: { type: String, default: '' },
