@@ -6,6 +6,7 @@ export const getGameOne = async (req, res) => {
   let searchKey = {
     ...req.query
   }
+  
   try {
     let response = await GameModel.findOne(searchKey).populate('player');
     const result = sendRes(true, "success", response)
@@ -49,7 +50,7 @@ export const getGames = async (req, res) => {
   }
 
   try {
-    let response = await GameModel.find(searchKey).populate('player');
+    let response = await GameModel.find(searchKey).populate('player').sort({ gameDate: -1 });
     const result = sendRes(true, "success", response)
     res.json(result);
   } catch (error) {
