@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f8017096.css",
-    "main.js": "/static/js/main.314c30e3.js",
+    "main.css": "/static/css/main.208ddf0c.css",
+    "main.js": "/static/js/main.3d739830.js",
     "static/js/453.f6abbd88.chunk.js": "/static/js/453.f6abbd88.chunk.js",
     "static/media/BallHog.mp4": "/static/media/BallHog.7c92a7a39ec28da59326.mp4",
     "static/media/mobilescreen.png": "/static/media/mobilescreen.36221979353658331798.png",
@@ -17,7 +17,6 @@
     "static/media/nba-logo.png": "/static/media/nba-logo.fb65b6aa3a203cca2dd7.png",
     "static/media/bg.png": "/static/media/bg.b3a3580c8e82e3550d71.png",
     "static/media/list.png": "/static/media/list.f0ac655b7c894580d3dc.png",
-    "static/media/golden-logo.png": "/static/media/golden-logo.90cdc5745ec77551c1d1.png",
     "static/media/baksidelogo.png": "/static/media/baksidelogo.e7aa8cd2ca1bd7a146ab.png",
     "static/media/biglogo.png": "/static/media/biglogo.d3e386f6db158d0ebf98.png",
     "static/media/ncaa_fb_logo.png": "/static/media/ncaa_fb_logo.508bac551094bcc6f12d.png",
@@ -69,12 +68,12 @@
     "static/media/playbutton.svg": "/static/media/playbutton.2c4f9d41d38f7b4e063dd24a2cbfe453.svg",
     "static/media/arrow_top_right.svg": "/static/media/arrow_top_right.281c73769d0bcc7a643d7617785289d2.svg",
     "static/media/dottedline.svg": "/static/media/dottedline.0cb798bbdf1aef0be70e.svg",
-    "main.f8017096.css.map": "/static/css/main.f8017096.css.map",
-    "main.314c30e3.js.map": "/static/js/main.314c30e3.js.map",
+    "main.208ddf0c.css.map": "/static/css/main.208ddf0c.css.map",
+    "main.3d739830.js.map": "/static/js/main.3d739830.js.map",
     "453.f6abbd88.chunk.js.map": "/static/js/453.f6abbd88.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f8017096.css",
-    "static/js/main.314c30e3.js"
+    "static/css/main.208ddf0c.css",
+    "static/js/main.3d739830.js"
   ]
 }
