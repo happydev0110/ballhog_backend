@@ -172,8 +172,16 @@ export const updateOneUser = async (req, res) => {
   let searchKey = { ...search };
   let modifyData = { ...modify };
 
-  console.log(searchKey, modifyData)
   try {
+    if (modifyData.password) {
+      // Compare passwords
+      const hashedPassword = await bcrypt.hash(modifyData.password, 10);
+      modifyData = {
+        ...modify,
+        password: hashedPassword
+      }
+    }
+    
     await UserModel.updateOne(searchKey, modifyData, { returnDocument: 'after' });
     const updateDoc = await UserModel.findOne(search);
     const result = sendRes(true, "success", updateDoc)
