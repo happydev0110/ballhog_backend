@@ -11,6 +11,7 @@ const userRouter = express.Router();
 userRouter.post('/register', UserCtrl.reigster);
 // User Login
 userRouter.post('/login', UserCtrl.login);
+userRouter.post('/verifyCode', UserCtrl.verifyCode);
 
 userRouter.get('/users', UserCtrl.getUserOne);
 userRouter.get('/users/many', UserCtrl.getUser);

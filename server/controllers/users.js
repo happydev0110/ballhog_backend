@@ -64,6 +64,36 @@ export const login = async (req, res) => {
   }
 }
 
+export const verifyCode = async (req, res) => {
+  try {
+    const { email, password, otp } = req.body;
+
+    // Check if user exists
+    const user = await UserModel.findOne({ email });
+    if (!user) {
+      // return res.status(401).json({ message: 'Invalid credentials' });
+      return res.json(sendRes(false, 'Phone Number is not correct.'));
+    }
+
+    // Compare passwords
+    // const passwordMatch = await bcrypt.compare(password, user.password);
+    // if (!passwordMatch) {
+    //   return res.json(sendRes(false, 'Password is not correct'));
+    // }
+
+    // Generate JWT token
+    const token = jwt.sign({ email: user.email }, 'secret_key', {
+      expiresIn: '1h',
+    });
+
+    // res.json({ token, email });
+    res.json(sendRes(true, 'Login success', { token, user }));
+  } catch (error) {
+    console.error(error);
+    res.json(sendRes(false, 'Internal server error'));
+  }
+}
+
 export const getUser = async (req, res) => {
   let searchKey = {
     ...req.query
