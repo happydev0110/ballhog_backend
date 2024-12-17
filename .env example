@@ -1,4 +1,4 @@
-MONGODB_URI = mongodb://localhost:27017/underneath
+MONGODB_URI = mongodb+srv://happy0110:I1bQNilBRfZJu7vC@ballhog.mqhbn.mongodb.net/
 # MONGODB_URI = mongodb+srv://happy0110:NXu3y5CkfxCda2NP@ballhog.mqhbn.mongodb.net/
-DB_NAME = underneath
-PORT = 8001
+DB_NAME = ballhog
+PORT = 5001
