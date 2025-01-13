@@ -5,21 +5,20 @@ import express from 'express';
 //import { filterUsername } from '../middlewares/authMiddleware.js';
 
 import * as UserCtrl from "../controllers/users.js"
-const userRouter = express.Router();
+const router = express.Router();
 
 // User Registration
-userRouter.post('/register', UserCtrl.reigster);
+router.post('/register', UserCtrl.reigster);
 // User Login
-userRouter.post('/login', UserCtrl.login);
-userRouter.post('/verifyCode', UserCtrl.verifyCode);
+router.post('/login', UserCtrl.login);
+router.post('/verifyCode', UserCtrl.verifyCode);
 
-userRouter.get('/users', UserCtrl.getUserOne);
-userRouter.get('/users/many', UserCtrl.getUser);
-userRouter.post('/users', UserCtrl.addUser);
-userRouter.put('/users', UserCtrl.updateOneUser);
-userRouter.put('/users/many', UserCtrl.updateManyUsers);
-userRouter.delete('/users', UserCtrl.deleteOneUser);
-userRouter.delete('/users/many', UserCtrl.deleteManyUsers);
+router.get('/users', UserCtrl.getUserOne);
+router.get('/users/many', UserCtrl.getUser);
+router.post('/users', UserCtrl.addUser);
+router.put('/users', UserCtrl.updateOneUser);
+router.put('/users/many', UserCtrl.updateManyUsers);
+router.delete('/users', UserCtrl.deleteOneUser);
+router.delete('/users/many', UserCtrl.deleteManyUsers);
 
-export default userRouter;
-
+export default router;

@@ -5,8 +5,8 @@ import express from 'express';
 //import { filterUsername } from '../middlewares/authMiddleware.js';
 
 import * as SportsCtrl from "../controllers/sports.js"
-const sportsRouter = express.Router();
+const router = express.Router();
 
-sportsRouter.get('/getallscoringrules', SportsCtrl.getAllScoringRules);
+router.get('/getallscoringrules', SportsCtrl.getAllScoringRules);
 
-export default sportsRouter;
+export default router;

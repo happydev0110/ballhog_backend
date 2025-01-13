@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.33d3055c.css",
-    "main.js": "/static/js/main.97ff52ee.js",
+    "main.js": "/static/js/main.41d52b9c.js",
     "static/js/453.f6abbd88.chunk.js": "/static/js/453.f6abbd88.chunk.js",
     "static/media/BallHog.mp4": "/static/media/BallHog.7c92a7a39ec28da59326.mp4",
     "static/media/mobilescreen.png": "/static/media/mobilescreen.36221979353658331798.png",
@@ -46,6 +46,7 @@
     "static/media/Helpinfo.svg": "/static/media/Helpinfo.daa07947e9b5d9abbc82faee8b40219b.svg",
     "static/media/username.svg": "/static/media/username.99eac182e6ff9635687b4bc573944a88.svg",
     "static/media/dollar.svg": "/static/media/dollar.528605d3b945385678a820e45d0acf00.svg",
+    "static/media/star-icon.svg": "/static/media/star-icon.6fd8032ba6e9cf8ac35bcc7d0d20e442.svg",
     "static/media/football.svg": "/static/media/football.decf467d968a48b16ea990442114f8d4.svg",
     "static/media/user.svg": "/static/media/user.4472aca9878483b59f4dcf0871235319.svg",
     "static/media/arrowright.svg": "/static/media/arrowright.50ecc7e4502c2e02b26645a1f2ddda32.svg",
@@ -69,11 +70,11 @@
     "static/media/arrow_top_right.svg": "/static/media/arrow_top_right.bb7738adcd1a4de501ad090e77627343.svg",
     "static/media/dottedline.svg": "/static/media/dottedline.6ee5cd75b3703bcb67be.svg",
     "main.33d3055c.css.map": "/static/css/main.33d3055c.css.map",
-    "main.97ff52ee.js.map": "/static/js/main.97ff52ee.js.map",
+    "main.41d52b9c.js.map": "/static/js/main.41d52b9c.js.map",
     "453.f6abbd88.chunk.js.map": "/static/js/453.f6abbd88.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.33d3055c.css",
-    "static/js/main.97ff52ee.js"
+    "static/js/main.41d52b9c.js"
   ]
 }
