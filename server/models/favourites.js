@@ -44,6 +44,22 @@ const gameSchema = new mongoose.Schema(
       type: Number,
       default: 1
     },
+    player1Name:{
+      type: String,
+      default: 'Player1'
+    },
+    player2Name:{
+      type: String,
+      default: 'Player2'
+    },
+    player3Name:{
+      type: String,
+      default: 'Player3'
+    },
+    player4Name:{
+      type: String,
+      default: 'Player4'
+    },
     createdLink:{
       type: String,
       default: "https://www.playballhog.com/playGames"
