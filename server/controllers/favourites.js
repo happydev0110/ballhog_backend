@@ -6,7 +6,7 @@ export const getFavouriteGameOne = async (req, res) => {
   let searchKey = {
     ...req.query
   }
-  
+
   try {
     let response = await FavouriteModel.findOne(searchKey).populate('player');
     const result = sendRes(true, "success", response)
@@ -107,7 +107,7 @@ export const updateOneFavouriteGame = async (req, res) => {
 }
 
 export const deleteManyFavouriteGames = async (req, res) => {
-  let searchKey = { ...req.body };
+  let searchKey = { ...req.query };
 
   try {
     let response = await FavouriteModel.deleteMany(searchKey);
@@ -120,8 +120,8 @@ export const deleteManyFavouriteGames = async (req, res) => {
 }
 
 export const deleteOneFavouriteGame = async (req, res) => {
-  let searchKey = { ...req.body };
-
+  let searchKey = { ...req.query };
+  
   try {
     let response = await FavouriteModel.deleteOne(searchKey);
     const result = sendRes(true, "success", response.data)

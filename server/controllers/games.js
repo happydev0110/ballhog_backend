@@ -107,7 +107,7 @@ export const updateOneGame = async (req, res) => {
 }
 
 export const deleteManyGames = async (req, res) => {
-  let searchKey = { ...req.body };
+  let searchKey = { ...req.query };
 
   try {
     let response = await GameModel.deleteMany(searchKey);
@@ -120,7 +120,7 @@ export const deleteManyGames = async (req, res) => {
 }
 
 export const deleteOneGame = async (req, res) => {
-  let searchKey = { ...req.body };
+  let searchKey = { ...req.query };
 
   try {
     let response = await GameModel.deleteOne(searchKey);
