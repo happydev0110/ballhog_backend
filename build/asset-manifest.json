@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.80300485.css",
-    "main.js": "/static/js/main.9632e18e.js",
+    "main.js": "/static/js/main.d5da01ff.js",
     "static/js/453.f6abbd88.chunk.js": "/static/js/453.f6abbd88.chunk.js",
     "static/media/BallHog.mp4": "/static/media/BallHog.7c92a7a39ec28da59326.mp4",
     "static/media/mobilescreen.png": "/static/media/mobilescreen.36221979353658331798.png",
@@ -59,6 +59,7 @@
     "static/media/close-icon.svg": "/static/media/close-icon.88e5a18bd67647cb956b115e9804ddeb.svg",
     "static/media/facebook.svg": "/static/media/facebook.e472d56b7b27c83f3986a38d73f656ff.svg",
     "static/media/dallaslogo.svg": "/static/media/dallaslogo.1e11ffe75d7323a321dbfe7454218433.svg",
+    "static/media/dollar-blue-icon.svg": "/static/media/dollar-blue-icon.333eb08d47778f33bc72f1883c1f91d9.svg",
     "static/media/dollar-icon.svg": "/static/media/dollar-icon.b577305cd33a70d209f4198090745e3b.svg",
     "static/media/rightarrow.svg": "/static/media/rightarrow.e0693aa5f6c95484af78.svg",
     "static/media/message.svg": "/static/media/message.6deb99ac4c4751c878c232b880dc2c73.svg",
@@ -71,11 +72,11 @@
     "static/media/arrow_top_right.svg": "/static/media/arrow_top_right.bb7738adcd1a4de501ad090e77627343.svg",
     "static/media/dottedline.svg": "/static/media/dottedline.6ee5cd75b3703bcb67be.svg",
     "main.80300485.css.map": "/static/css/main.80300485.css.map",
-    "main.9632e18e.js.map": "/static/js/main.9632e18e.js.map",
+    "main.d5da01ff.js.map": "/static/js/main.d5da01ff.js.map",
     "453.f6abbd88.chunk.js.map": "/static/js/453.f6abbd88.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.80300485.css",
-    "static/js/main.9632e18e.js"
+    "static/js/main.d5da01ff.js"
   ]
 }

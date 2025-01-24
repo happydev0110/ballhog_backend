@@ -4,6 +4,7 @@ const userSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, default: '' },
     email: { type: String }, // Removed unique constraint
+    promoCode: { type: String }, 
     password: { type: String },
     phoneNumber: { type: String, default: '123-456-7890' }, // Removed unique constraint
     balance: { type: Number, required: true, default: 0 },
