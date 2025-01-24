@@ -50,7 +50,7 @@ export const getFavouriteGames = async (req, res) => {
   }
 
   try {
-    let response = await FavouriteModel.find(searchKey).populate('player').sort({ gameDate: -1 });
+    let response = await FavouriteModel.find(searchKey).populate('player').sort({ createdAt: -1 });
     const result = sendRes(true, "success", response)
     res.json(result);
   } catch (error) {
