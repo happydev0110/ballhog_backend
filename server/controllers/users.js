@@ -18,6 +18,11 @@ export const reigster = async (req, res) => {
       return res.json(sendRes(false, 'Phone Number already exists'));
     }
 
+    const existingUserPhoneNumber = await UserModel.findOne({ phoneNumber }); // Changed variable name to existingUser
+    if (existingUserPhoneNumber) {
+      return res.json(sendRes(false, 'Email already exists'));
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new UserModel({ name, email, phoneNumber, promoCode, password: hashedPassword });
     await newUser.save();
