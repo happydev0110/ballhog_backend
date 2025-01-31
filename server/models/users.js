@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema(
     email: { type: String }, // Removed unique constraint
     promoCode: { type: String }, 
     password: { type: String },
-    phoneNumber: { type: String, default: '' }, // Removed unique constraint
+    phoneNumber: { type: String }, // Removed unique constraint
     balance: { type: Number, required: true, default: 0 },
     creditLimit: { type: Number, required: true, default: 50 },
     payment: {

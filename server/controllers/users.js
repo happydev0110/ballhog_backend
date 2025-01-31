@@ -5,7 +5,7 @@ import { sendRes } from "../utils/common.js";
 
 export const reigster = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, phoneNumber, promoCode } = req.body;
     console.log(name, email, password, 'user info')
 
     const existingUserName = await UserModel.findOne({ name }).collation({ locale: 'en', strength: 2 }); // Changed variable name to existingUser
@@ -19,7 +19,7 @@ export const reigster = async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new UserModel({ name, email, password: hashedPassword });
+    const newUser = new UserModel({ name, email, phoneNumber, promoCode, password: hashedPassword });
     await newUser.save();
 
     const token = jwt.sign({ email: newUser.email }, 'secret_key', {
