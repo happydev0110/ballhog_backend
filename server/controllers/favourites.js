@@ -45,13 +45,31 @@ export const getTotalEntryPoints = async (req, res) => {
 }
 
 export const getFavouriteGames = async (req, res) => {
+  // Default values for pagination
+  const page = parseInt(req.query.page, 10) || 1;
+  const limit = parseInt(req.query.limit, 10) || 10;
+  const skip = (page - 1) * limit;
+
   let searchKey = {
     ...req.query
   }
 
+  // Remove page and limit keys from searchKey to avoid conflicts in the query
+  delete searchKey.page;
+  delete searchKey.limit;
+
   try {
-    let response = await FavouriteModel.find(searchKey).populate('player').sort({ createdAt: -1 });
-    const result = sendRes(true, "success", response)
+    let response = await FavouriteModel.find(searchKey).populate('player').sort({ createdAt: -1 }).limit(limit).skip(skip);
+    const totalCount = await FavouriteModel.countDocuments(searchKey);
+    // const totalPages = Math.ceil(totalCount / limit);
+
+    const result = sendRes(true, "success", {
+      games: response,
+      totalGames: totalCount,
+      // totalPages: totalPages,
+      currentPage: page
+    })
+
     res.json(result);
   } catch (error) {
     console.log(error);
@@ -121,7 +139,7 @@ export const deleteManyFavouriteGames = async (req, res) => {
 
 export const deleteOneFavouriteGame = async (req, res) => {
   let searchKey = { ...req.query };
-  
+
   try {
     let response = await FavouriteModel.deleteOne(searchKey);
     const result = sendRes(true, "success", response.data)
