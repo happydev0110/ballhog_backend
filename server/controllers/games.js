@@ -60,7 +60,7 @@ export const getGames = async (req, res) => {
 
   try {
     let response = await GameModel.find(searchKey).populate('player').sort({ createdAt: -1 }).limit(limit).skip(skip);
-    const totalCount = await FavouriteModel.countDocuments(searchKey);
+    const totalCount = await GameModel.countDocuments(searchKey);
     // const totalPages = Math.ceil(totalCount / limit);
 
     const result = sendRes(true, "success", {
