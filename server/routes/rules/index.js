@@ -9,20 +9,21 @@ export const getCheckedDS = async (req, res) => {
     console.log(event, team1Idx, sportCategory, 'sports event');
 
     let selTeamIdx;
-    let tableScore;
+    let tableScore = [0, 0, 0, 0];
     let selTextIdx;
     let selTblIdx;
     let description;
     let time;
     let historyList;
+
     let winProbability;
-    let eventList;
-    let resultList;
+    let eventList = [];
+    let resultList = [];
     let startTime = -1;
     let timeList;
 
-    let homeScore;
-    let awayScore;
+    let homeScore = 0;
+    let awayScore = 0;
 
     let playList;
     let resList;
@@ -48,7 +49,7 @@ export const getCheckedDS = async (req, res) => {
             }
         }
     )
-    
+
     playList = response.data;
     // setInitial();
 
@@ -600,7 +601,7 @@ export const getCheckedDS = async (req, res) => {
         playList,
         increaseAmount,
         description,
-        history:historyList,
+        history: historyList,
         winProbabilityData,
         prevHisList,
         eventList,
