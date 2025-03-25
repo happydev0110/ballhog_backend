@@ -1,12 +1,12 @@
 import axios from "axios";
 import { URL, DATASET_TYPE_CATEGORY } from "../../const/index.js";
 import { checkFunc } from "./checkFunc.js";
-import { changeTeamIdx, getWinProbability, handleScore, reverseTime } from "./func.js";
+import { changeTeamIdx, getWinProbability, handleScore, mergeArrays, reverseTime } from "./func.js";
 
 export const getCheckedDS = async (req, res) => {
     const { event, team1Idx, sportCategory } = req.body;
 
-    console.log(event, team1Idx, sportCategory, 'sports event');
+    // console.log(event, team1Idx, sportCategory, 'sports event');
 
     let selTeamIdx;
     let tableScore = [0, 0, 0, 0];
@@ -260,11 +260,11 @@ export const getCheckedDS = async (req, res) => {
                 }))
                 resList.plays = mergeArrays(resList.plays, updatedList)
             }
-            console.log(resList.plays, "plays List")
+            // console.log(resList.plays, "plays List")
         }
 
         if (team1Idx != -1 && resList.plays) {
-            console.log('Loop', resList.plays.length)
+            // console.log('Loop', resList.plays.length)
 
             for (let i = 0; i < resList.plays.length; i++) {
                 // console.log(i,'Events List')
