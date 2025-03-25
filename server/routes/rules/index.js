@@ -1,7 +1,7 @@
 import axios from "axios";
 import { URL, DATASET_TYPE_CATEGORY } from "../../const/index.js";
-import { checkFunc } from "./checkFunc.js";
-import { changeTeamIdx, getWinProbability, handleScore, mergeArrays, reverseTime } from "./func.js";
+import { checkFunc, checkSoccerFunc } from "./checkFunc.js";
+import { changeTeamIdx, getWinProbability, handleScore, handleSoccerScore, mergeArrays, reverseTime } from "./func.js";
 
 export const getCheckedDS = async (req, res) => {
     const { event, team1Idx, sportCategory } = req.body;
@@ -22,6 +22,7 @@ export const getCheckedDS = async (req, res) => {
     let startTime = -1;
     let timeList;
 
+    let selectedTeam1s = [0, 0, 0, 0]
     let homeScore = 0;
     let awayScore = 0;
 
@@ -29,18 +30,6 @@ export const getCheckedDS = async (req, res) => {
     let resList;
     let dataSetType = DATASET_TYPE_CATEGORY[sportCategory];
     let apiUrl = URL[sportCategory];
-
-    // await axios.get(apiUrl,
-    //     {
-    //         params: {
-    //             event
-    //         }
-    //     }
-    // ).then((response) => {
-
-    // }).catch((err) => {
-    //     console.log(err)
-    // });
 
     let response = await axios.get(apiUrl,
         {
@@ -219,32 +208,53 @@ export const getCheckedDS = async (req, res) => {
                 }
             }
 
-            if (result) {
-                setSelTeamIdx(selectedTeamIdx)
-                setTableScore(result.score);
-                setSelTextIdx(textIndex);
-                setSelTblIdx(tableIndex);
-                setIncreaseAmt(increaseAmount);
-                setDescription(result.description);
-                setTime(result.sequenceTime);
-                setHistoryList(hisList);
-                prevHisList = hisList;
+            // if (result) {
+            //     setSelTeamIdx(selectedTeamIdx)
+            //     setTableScore(result.score);
+            //     setSelTextIdx(textIndex);
+            //     setSelTblIdx(tableIndex);
+            //     setIncreaseAmt(increaseAmount);
+            //     setDescription(result.description);
+            //     setTime(result.sequenceTime);
+            //     setHistoryList(hisList);
+            //     prevHisList = hisList;
 
-                setEventList(matchEvtList)
-                setResultList(DSList);
+            //     setEventList(matchEvtList)
+            //     setResultList(DSList);
 
-                if (startTime == -1) {
-                    setTimeList(timerList);
-                }
-            }
+            //     if (startTime == -1) {
+            //         setTimeList(timerList);
+            //     }
+            // }
 
-            // console.log(team1Score, team2Score, 'team score')
+            // // console.log(team1Score, team2Score, 'team score')
+            // if (team1Idx === 1) {
+            //     setHomeScore(team1Score);
+            //     setAwayScore(team2Score);
+            // } else {
+            //     setHomeScore(team2Score);
+            //     setAwayScore(team1Score);
+            // }
+
+            selTeamIdx = selectedTeamIdx;
+            tableScore = result.score;
+            selTextIdx = textIndex;
+            selTblIdx = tableIndex;
+            increaseAmount = increaseAmount;
+            description = result.description;
+            time = result.sequenceTime;
+            historyList = hisList
+            winProbability = winProbabilityData;
+            prevHisList = hisList;
+            eventList = matchEvtList;
+            resultList = DSList;
+
             if (team1Idx === 1) {
-                setHomeScore(team1Score);
-                setAwayScore(team2Score);
+                homeScore = team1Score;
+                awayScore = team2Score;
             } else {
-                setHomeScore(team2Score);
-                setAwayScore(team1Score);
+                homeScore = team2Score;
+                awayScore = team1Score;
             }
         }
     } else {
@@ -517,31 +527,6 @@ export const getCheckedDS = async (req, res) => {
                 }
             }
 
-            // if (result) {
-            //     setSelTeamIdx(selectedTeamIdx)
-            //     setTableScore(result.score);
-            //     setSelTextIdx(textIndex);
-            //     setSelTblIdx(tableIndex);
-            //     setIncreaseAmt(increaseAmount);
-            //     setDescription(result.description);
-            //     setTime(result.sequenceTime);
-            //     setHistoryList(hisList);
-            //     // winProbabilityData
-            //     setWinProbability(winProbabilityData);
-
-            //     prevHisList = hisList;
-
-            //     setEventList(matchEvtList);
-            //     setResultList(DSList);
-
-            //     setHomeScore(result.homeScore);
-            //     setAwayScore(result.awayScore);
-
-            //     if (startTime == -1) {
-            //         setTimeList(timerList);
-            //     }
-            // }
-
             selTeamIdx = selectedTeamIdx;
             tableScore = result.score;
             selTextIdx = textIndex;
@@ -561,29 +546,6 @@ export const getCheckedDS = async (req, res) => {
             if (startTime == -1) {
                 timeList = timerList;
             }
-
-
-            // res.json({
-            //     selTeamIdx,
-            //     tableScore,
-            //     selTextIdx,
-            //     selTblIdx,
-            //     time,
-            //     score: result.score,
-            //     textIndex,
-            //     tableIndex,
-            //     increaseAmount,
-            //     description,
-            //     history:historyList,
-            //     winProbabilityData,
-            //     prevHisList,
-            //     eventList,
-            //     resultList,
-
-            //     homeScore,
-            //     awayScore,
-            //     timeList
-            // })
         }
     }
     // res.json({
