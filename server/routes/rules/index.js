@@ -21,6 +21,7 @@ export const getCheckedDS = async (req, res) => {
     let startTime = -1;
     let timeList;
 
+    let winProbability;
     let selectedTeam1s = [0, 0, 0, 0]
     let homeScore = 0;
     let awayScore = 0;
