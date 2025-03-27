@@ -5,12 +5,11 @@ import gameRouter from './games.js';
 import favouriteGameRouter from './favourites.js';
 import sportsRouter from './sports.js';
 
-import { getCheckedDS } from './rules/index.js';
+import * as RuleCtrl from './rules/index.js';
 
 const router = express.Router();
 
-router.post('/getCheckedDS', getCheckedDS);
-
+router.post('/getCheckedDS', RuleCtrl.getCheckedDS);
 router.use('/', userRouter);
 router.use('/games', gameRouter);
 router.use('/favourites', favouriteGameRouter);

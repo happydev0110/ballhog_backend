@@ -16,7 +16,6 @@ export const getCheckedDS = async (req, res) => {
     let time;
     let historyList;
 
-    let winProbability;
     let eventList = [];
     let resultList = [];
     let startTime = -1;
@@ -125,7 +124,7 @@ export const getCheckedDS = async (req, res) => {
                                     team1Score = parseInt(currentPlayItem.text.slice(team1NameIdx + team1Name.length + 1, team1NameIdx + team1Name.length + 3).trim());
                                     team2Score = parseInt(currentPlayItem.text.slice(team2NameIdx + team2Name.length + 1, team2NameIdx + team2Name.length + 3).trim());
 
-                                    console.log(team1Score, team2Score, 'Soccer Score')
+                                    // console.log(team1Score, team2Score, 'Soccer Score')
                                 }
                             }
                         }

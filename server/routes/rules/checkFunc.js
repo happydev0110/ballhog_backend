@@ -2868,7 +2868,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
     // NHL3
     // NHL3-DS2-1
     if (dataTypeItem.no === 'NHL3-DS2-1') {
-        if (currentPlayItem === undefined || currentPlayItem.clock === undefined || currentPlayItem.clock.displayValue === undefined || prevPlayItem === undefined || prevPlayItem.clock === undefined || prevPlayItem.clock.displayValue === undefined) {
+        if (currentPlayItem.clock === undefined || currentPlayItem.clock.displayValue === undefined || prevPlayItem === undefined || prevPlayItem.clock === undefined || prevPlayItem.clock.displayValue === undefined) {
             status = true;
         } else {
             if (currentPlayItem.clock.displayValue != prevPlayItem.clock.displayValue) {
@@ -2878,7 +2878,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
     }
     // NHL3-DS2-2
     if (dataTypeItem.no === 'NHL3-DS2-2') {
-        if (currentPlayItem === undefined || currentPlayItem.clock === undefined || currentPlayItem.clock.displayValue === undefined || prevPlayItem === undefined || prevPlayItem.clock === undefined || prevPlayItem.clock.displayValue === undefined) {
+        if (currentPlayItem.clock === undefined || currentPlayItem.clock.displayValue === undefined || prevPlayItem === undefined || prevPlayItem.clock === undefined || prevPlayItem.clock.displayValue === undefined) {
             status = true;
         } else {
             if (currentPlayItem.clock.displayValue != prevPlayItem.clock.displayValue) {
@@ -2889,7 +2889,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
 
     // NHL3-DS3
     if (dataTypeItem.no === 'NHL3-DS3') {
-        if (currentPlayItem === undefined || currentPlayItem.period === undefined || currentPlayItem.period.number === undefined) {
+        if (currentPlayItem.period === undefined || currentPlayItem.period.number === undefined) {
             status = true;
         } else {
             if (currentPlayItem.period.number == 5) {
@@ -2899,7 +2899,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
     }
     // NHL3-DS3-1
     if (dataTypeItem.no === 'NHL3-DS3-1') {
-        if (currentPlayItem === undefined || currentPlayItem.period === undefined || currentPlayItem.period.number === undefined) {
+        if (currentPlayItem.period === undefined || currentPlayItem.period.number === undefined) {
             status = true;
         } else {
             if (currentPlayItem.period.number == 5) {
@@ -2909,7 +2909,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
     }
     // NHL3-DS3-2
     if (dataTypeItem.no === 'NHL3-DS3-2') {
-        if (currentPlayItem === undefined || currentPlayItem.period === undefined || currentPlayItem.period.number === undefined || currentPlayItem.strength === undefined || currentPlayItem.strength.id === undefined) {
+        if (currentPlayItem.period === undefined || currentPlayItem.period.number === undefined || currentPlayItem.strength === undefined || currentPlayItem.strength.id === undefined) {
             status = true;
         } else {
             if (currentPlayItem.period.number == 5 || currentPlayItem.strength.id == 702) {
@@ -2919,7 +2919,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
     }
     // NHL3-DS3-3
     if (dataTypeItem.no === 'NHL3-DS3-3') {
-        if (currentPlayItem === undefined || currentPlayItem.period === undefined || currentPlayItem.period.number === undefined || currentPlayItem.strength === undefined || currentPlayItem.strength.id === undefined) {
+        if (currentPlayItem.period === undefined || currentPlayItem.period.number === undefined || currentPlayItem.strength === undefined || currentPlayItem.strength.id === undefined) {
             status = true;
         } else {
             if (currentPlayItem.period.number == 5 || !(currentPlayItem.strength.id == 702)) {
@@ -2939,7 +2939,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
     }
     // NHL3-DS5-1
     if (dataTypeItem.no === 'NHL3-DS5-1') {
-        if (currentPlayItem === undefined || currentPlayItem.period === undefined || currentPlayItem.period.number === undefined) {
+        if (currentPlayItem.period === undefined || currentPlayItem.period.number === undefined) {
             status = true;
         } else {
             if (currentPlayItem.period.number == 5) {
@@ -2949,7 +2949,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
     }
     // NHL3-DS5-2
     if (dataTypeItem.no === 'NHL3-DS5-2') {
-        if (currentPlayItem === undefined || currentPlayItem.period === undefined || currentPlayItem.period.number === undefined) {
+        if (currentPlayItem.period === undefined || currentPlayItem.period.number === undefined) {
             status = true;
         } else {
             if (currentPlayItem.period.number == 5) {
@@ -3122,10 +3122,12 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
 
     // SOCCER-DS9
     if (dataTypeItem.no === 'SOCCER-DS9') {
-        if (currentPlayItem.text === undefined || currentPlayItem.type === undefined) {
+        if (currentPlayItem.text === undefined || currentPlayItem.play === undefined || currentPlayItem.play.type === undefined) {
             status = true;
         } else {
-            // console.log(currentPlayItem.sequence, currentPlayItem.text, 'SOCCER-DS9-description')
+            if(currentPlayItem.sequence == 12){
+                console.log(currentPlayItem.sequence, currentPlayItem.text, 'SOCCER-DS9-description')
+            }
             if (currentPlayItem.text.indexOf('Goal!') === -1) {
                 status = true;
             } else {
@@ -3141,19 +3143,18 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
                     team2Score = parseInt(currentPlayItem.text.slice(team2NameIdx + team2Name.length + 1, team2NameIdx + team2Name.length + 3).trim())
                 }
             }
-            if (currentPlayItem.type.id == 104 || currentPlayItem.text.indexOf('OVERTURNED') !== -1) {
+
+            if (currentPlayItem.play.type.id == 104 || currentPlayItem.text.indexOf('OVERTURNED') !== -1) {
                 status = true;
             }
         }
     }
     // SOCCER-DS10
     if (dataTypeItem.no === 'SOCCER-DS10') {
-        if (currentPlayItem.text === undefined || currentPlayItem.type === undefined || currentPlayItem.type.id === undefined
-
-        ) {
+        if (currentPlayItem.text === undefined || currentPlayItem.play === undefined || currentPlayItem.play.type === undefined || currentPlayItem.play.type.id === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.type.id == 104 || currentPlayItem.text.indexOf('Goal!') === -1 || currentPlayItem.text.indexOf('OVERTURNED') !== -1) {
+            if (currentPlayItem.play.type.id == 104 || currentPlayItem.text.indexOf('Goal!') === -1 || currentPlayItem.text.indexOf('OVERTURNED') !== -1) {
                 status = true;
             }
         }
@@ -3221,10 +3222,10 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
 
     // SOCCER-DS22
     if (dataTypeItem.no === 'SOCCER-DS22') {
-        if (currentPlayItem.type === undefined) {
+        if (currentPlayItem.play === undefined || currentPlayItem.play.type === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.type.id == 115) {
+            if (currentPlayItem.play.type.id == 115) {
                 status = true;
             }
         }
@@ -3232,10 +3233,10 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
 
     // SOCCER-DS22-1
     if (dataTypeItem.no === 'SOCCER-DS22-1') {
-        if (currentPlayItem.text === undefined || currentPlayItem.type == undefined || currentPlayItem.type.id == undefined) {
+        if (currentPlayItem.text === undefined || currentPlayItem.play === undefined || currentPlayItem.play.type === undefined || currentPlayItem.play.type.id === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.type.id == 115 || currentPlayItem.text.indexOf('Penalty missed') === -1) {
+            if (currentPlayItem.play.type.id == 115 || currentPlayItem.text.indexOf('Penalty missed') === -1) {
                 status = true;
             }
         }
@@ -3243,10 +3244,10 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
 
     // SOCCER-DS22-2
     if (dataTypeItem.no === 'SOCCER-DS22-2') {
-        if (currentPlayItem.text === undefined || currentPlayItem.type == undefined || currentPlayItem.type.id == undefined) {
+        if (currentPlayItem.text === undefined || currentPlayItem.play === undefined || currentPlayItem.play.type === undefined || currentPlayItem.play.type.id === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.type.id == 115 || currentPlayItem.text.indexOf('Penalty missed') === -1) {
+            if (currentPlayItem.play.type.id == 115 || currentPlayItem.text.indexOf('Penalty missed') === -1) {
                 status = true;
             }
         }
@@ -3364,7 +3365,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
 
     // Compare TypeId
     if (dataTypeItem.typeId) {
-        if (currentPlayItem.play === undefined) {
+        if (currentPlayItem.play === undefined || currentPlayItem.play.type === undefined || currentPlayItem.play.type.id === undefined) {
             status = true;
         } else {
             if (dataTypeItem.typeId != currentPlayItem.play.type.id) {
