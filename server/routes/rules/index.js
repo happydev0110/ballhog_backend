@@ -1,7 +1,7 @@
 import axios from "axios";
 import { URL, DATASET_TYPE_CATEGORY } from "../../const/index.js";
 import { checkFunc, checkSoccerFunc } from "./checkFunc.js";
-import { changeTeamIdx, getWinProbability, handleScore, handleSoccerScore, mergeArrays, reverseTime } from "./func.js";
+import { changeTeamIdx, getWinProbability, handleScore, handleSoccerScore, mergeArrays, reverseTime, findSimilarWordPosition } from "./func.js";
 
 export const getCheckedDS = async (req, res) => {
     const { event, team1Idx, sportCategory } = req.body;
@@ -70,6 +70,9 @@ export const getCheckedDS = async (req, res) => {
     let nextPlayItem;
     let winProbabilityData = '';
 
+    let team1Score = 0;
+    let team2Score = 0;
+
     if (resList.boxscore.teams[team1Idx]) {
         team1Id = resList.boxscore.teams[team1Idx].team.id;                                     //team1 ID
         team2Id = resList.boxscore.teams[(parseInt(team1Idx) + 1) % 2].team.id;                 //team2 ID
@@ -115,21 +118,29 @@ export const getCheckedDS = async (req, res) => {
                             if (currentPlayItem.text.indexOf('Goal!') === -1 || currentPlayItem.text.indexOf('OVERTURNED') !== -1) {
                                 continue;
                             } else {
-                                let team1NameIdx = currentPlayItem.text.indexOf(team1Name);
-                                let team2NameIdx = currentPlayItem.text.indexOf(team2Name);
+                                // let team1NameIdx = currentPlayItem.text.indexOf(team1Name);
+                                // let team2NameIdx = currentPlayItem.text.indexOf(team2Name);
 
-                                if (team1NameIdx == -1) team1NameIdx = currentPlayItem.text.indexOf(team1Name);
-                                if (team2NameIdx == -1) team2NameIdx = currentPlayItem.text.indexOf(team2Name);
+                                let team1NameIdx = findSimilarWordPosition(currentPlayItem.text, team1Name);
+                                let team2NameIdx = findSimilarWordPosition(currentPlayItem.text, team2Name);
+
+                                console.log(team1NameIdx, team1Name, 'team1NameIdx')
+                                console.log(team2NameIdx, team2Name, 'team2NameIdx')
+                                console.log(currentPlayItem.text,'current text')
+
+                                // if (team1NameIdx == -1) team1NameIdx = currentPlayItem.text.indexOf(team1Name);
+                                // if (team2NameIdx == -1) team2NameIdx = currentPlayItem.text.indexOf(team2Name);
 
                                 if (team1NameIdx !== -1 && team2NameIdx !== -1) {
                                     team1Score = parseInt(currentPlayItem.text.slice(team1NameIdx + team1Name.length + 1, team1NameIdx + team1Name.length + 3).trim());
                                     team2Score = parseInt(currentPlayItem.text.slice(team2NameIdx + team2Name.length + 1, team2NameIdx + team2Name.length + 3).trim());
 
-                                    // console.log(team1Score, team2Score, 'Soccer Score')
+                                    console.log(team1Score, team2Score, 'Soccer Score')
                                 }
                             }
                         }
                     }
+
 
                     matchEvtList.push({
                         ...currentPlayItem,
