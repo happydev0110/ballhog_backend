@@ -287,11 +287,13 @@ export const getCheckedDS = async (req, res) => {
                 /* Special DS (NHL) */
                 if (sportCategory === 'NHL' || sportCategory === 'NHL3') {
                     if (currentPlayItem.type.id == 502) {
-                        PREV_NHL_DS2 = {
-                            id: 502,
-                            seq: currentPlayItem.sequenceNumber,
-                            teamId: currentPlayItem.team.id,
-                            ...currentPlayItem
+                        if (currentPlayItem.team) {
+                            PREV_NHL_DS2 = {
+                                id: 502,
+                                seq: currentPlayItem.sequenceNumber,
+                                teamId: currentPlayItem.team.id,
+                                ...currentPlayItem
+                            }
                         }
                     }
 

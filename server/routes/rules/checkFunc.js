@@ -3201,7 +3201,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Corner,') === -1 || (!currentPlayItem.text.toLowerCase().includes(team2Name.toLowerCase()) && !currentPlayItem.text.toLowerCase().includes(team2Abbre.toLowerCase()))) {
+            if (currentPlayItem.text.indexOf('Corner,') === -1 || (!includesSimilarWord(currentPlayItem.text, team2Name) && !includesSimilarWord(currentPlayItem.text, team2Abbre))) {
                 status = true;
             }
         }
