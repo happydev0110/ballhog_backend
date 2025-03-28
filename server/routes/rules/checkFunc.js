@@ -3125,9 +3125,6 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined || currentPlayItem.play === undefined || currentPlayItem.play.type === undefined) {
             status = true;
         } else {
-            if(currentPlayItem.sequence == 12){
-                console.log(currentPlayItem.sequence, currentPlayItem.text, 'SOCCER-DS9-description')
-            }
             if (currentPlayItem.text.indexOf('Goal!') === -1) {
                 status = true;
             } else {
@@ -3154,6 +3151,9 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined || currentPlayItem.play === undefined || currentPlayItem.play.type === undefined || currentPlayItem.play.type.id === undefined) {
             status = true;
         } else {
+            if(currentPlayItem.sequence == 21){
+                console.log(currentPlayItem.sequence, currentPlayItem.text, 'SOCCER-DS9-description')
+            }
             if (currentPlayItem.play.type.id == 104 || currentPlayItem.text.indexOf('Goal!') === -1 || currentPlayItem.text.indexOf('OVERTURNED') !== -1) {
                 status = true;
             }
