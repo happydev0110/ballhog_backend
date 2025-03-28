@@ -128,15 +128,15 @@ export const SOCCER_DS = [
         Increase: 3,
         rotation: true
     },
-    {//DataSet14-1 CT1
-        no: 'SOCCER-DS14-1',
-        teamId: -1,
-        typeId: false,
-        logo: 1,
-        scoreValue: -1,
-        Increase: 4,
-        rotation: true
-    },
+    // {//DataSet14-1 CT1
+    //     no: 'SOCCER-DS14-1',
+    //     teamId: -1,
+    //     typeId: false,
+    //     logo: 1,
+    //     scoreValue: -1,
+    //     Increase: 4,
+    //     rotation: true
+    // },
     {//DataSet15 CT2
         no: 'SOCCER-DS15',
         teamId: -1,
