@@ -3148,12 +3148,9 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
     }
     // SOCCER-DS10
     if (dataTypeItem.no === 'SOCCER-DS10') {
-        if (currentPlayItem.text === undefined || currentPlayItem.play === undefined || currentPlayItem.play.type === undefined) {
+        if (currentPlayItem.text === undefined || currentPlayItem.play === undefined || currentPlayItem.play.type === undefined || currentPlayItem.play.type.id === undefined) {
             status = true;
         } else {
-            if(currentPlayItem.sequence == 21){
-                console.log(currentPlayItem.sequence, currentPlayItem.text, currentPlayItem.text.indexOf('OVERTURNED'), 'SOCCER-DS9-description')
-            }
             if (currentPlayItem.play.type.id == 104 || currentPlayItem.text.indexOf('Goal!') === -1 || currentPlayItem.text.indexOf('OVERTURNED') !== -1) {
                 status = true;
             }
@@ -3351,11 +3348,22 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         } else {
             if (currentPlayItem.play.team) {
                 if (dataTypeItem.teamId) {
-                    if (currentPlayItem.play.team.displayName != team2Name) {
+                    let team2NameUpdate = team2Name;
+                    if (team2Name.includes('&')) {
+                        team2NameUpdate = team2Name.replace('&', 'and');
+                    }
+
+                    if (!(currentPlayItem.play.team.displayName == team2Name || currentPlayItem.play.team.displayName == team2NameUpdate)) {
                         status = true;
                     }
+
                 } else {
-                    if (currentPlayItem.play.team.displayName != team1Name) {
+                    let team1NameUpdate = team1Name;
+                    if (team1Name.includes('&')) {
+                        team1NameUpdate = team1Name.replace('&', 'and');
+                    }
+
+                    if (!(currentPlayItem.play.team.displayName == team1Name || currentPlayItem.play.team.displayName == team1NameUpdate)) {
                         status = true;
                     }
                 }

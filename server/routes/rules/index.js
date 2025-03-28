@@ -78,13 +78,13 @@ export const getCheckedDS = async (req, res) => {
         team1Abbre = resList.boxscore.teams[team1Idx].team.abbreviation;                        //team1 abbreviation
         team2Abbre = resList.boxscore.teams[(parseInt(team1Idx) + 1) % 2].team.abbreviation;
 
-        if (team1Name.includes('&')) {
-            team1Name = team1Name.replace('&', 'and');
-        }
+        // if (team1Name.includes('&')) {
+        //     team1Name = team1Name.replace('&', 'and');
+        // }
 
-        if (team2Name.includes('&')) {
-            team2Name = team2Name.replace('&', 'and');
-        }
+        // if (team2Name.includes('&')) {
+        //     team2Name = team2Name.replace('&', 'and');
+        // }
     }
 
     if (sportCategory == 'SOCCER') {
