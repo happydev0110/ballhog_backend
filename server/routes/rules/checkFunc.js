@@ -1,4 +1,4 @@
-import { getDuraton, getTimeFromClock } from "./func.js";
+import { getDuraton, getTimeFromClock, isSimilar, includesSimilarWord } from "./func.js";
 
 export const checkWords = (text, words) => {
     let status = false
@@ -3181,7 +3181,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Corner,') === -1 || (!currentPlayItem.text.toLowerCase().includes(team1Name.toLowerCase()) && !currentPlayItem.text.toLowerCase().includes(team1Abbre.toLowerCase()))) {
+            if (currentPlayItem.text.indexOf('Corner,') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1Abbre))) {
                 status = true;
             }
         }
@@ -3348,22 +3348,30 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         } else {
             if (currentPlayItem.play.team) {
                 if (dataTypeItem.teamId) {
-                    let team2NameUpdate = team2Name;
-                    if (team2Name.includes('&')) {
-                        team2NameUpdate = team2Name.replace('&', 'and');
-                    }
+                    // let team2NameUpdate = team2Name;
+                    // if (team2Name.includes('&')) {
+                    //     team2NameUpdate = team2Name.replace('&', 'and');
+                    // }
 
-                    if (!(currentPlayItem.play.team.displayName == team2Name || currentPlayItem.play.team.displayName == team2NameUpdate)) {
-                        status = true;
+                    // if (!(currentPlayItem.play.team.displayName == team2Name || currentPlayItem.play.team.displayName == team2NameUpdate)) {
+                    //     status = true;
+                    // }
+
+                    if (!isSimilar(currentPlayItem.play.team.displayName, team2Name)) {
+                        status = true
                     }
 
                 } else {
-                    let team1NameUpdate = team1Name;
-                    if (team1Name.includes('&')) {
-                        team1NameUpdate = team1Name.replace('&', 'and');
-                    }
+                    // let team1NameUpdate = team1Name;
+                    // if (team1Name.includes('&')) {
+                    //     team1NameUpdate = team1Name.replace('&', 'and');
+                    // }
 
-                    if (!(currentPlayItem.play.team.displayName == team1Name || currentPlayItem.play.team.displayName == team1NameUpdate)) {
+                    // if (!(currentPlayItem.play.team.displayName == team1Name || currentPlayItem.play.team.displayName == team1NameUpdate)) {
+                    //     status = true;
+                    // }
+
+                    if (!isSimilar(currentPlayItem.play.team.displayName, team1Name)) {
                         status = true;
                     }
                 }
