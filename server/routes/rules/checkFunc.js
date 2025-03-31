@@ -3191,7 +3191,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Corner,') === -1 || currentPlayItem.text.indexOf('Hove Albion') === -1) {
+            if (currentPlayItem.text.indexOf('Corner,') === -1 || currentPlayItem.text.indexOf('Hove Albion') === -1 || currentPlayItem.text.indexOf('flashback') === -1) {
                 status = true;
             }
         }
