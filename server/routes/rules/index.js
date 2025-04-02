@@ -118,11 +118,11 @@ export const getCheckedDS = async (req, res) => {
                             if (currentPlayItem.text.indexOf('Goal!') === -1 || currentPlayItem.text.indexOf('OVERTURNED') !== -1) {
                                 continue;
                             } else {
-                                // let team1NameIdx = currentPlayItem.text.indexOf(team1Name);
-                                // let team2NameIdx = currentPlayItem.text.indexOf(team2Name);
+                                let team1NameIdx = currentPlayItem.text.indexOf(team1Name);
+                                let team2NameIdx = currentPlayItem.text.indexOf(team2Name);
 
-                                let team1NameIdx = findSimilarWordPosition(currentPlayItem.text, team1Name);
-                                let team2NameIdx = findSimilarWordPosition(currentPlayItem.text, team2Name);
+                                // let team1NameIdx = findSimilarWordPosition(currentPlayItem.text, team1Name);
+                                // let team2NameIdx = findSimilarWordPosition(currentPlayItem.text, team2Name);
 
                                 console.log(team1NameIdx, team1Name, 'team1NameIdx')
                                 console.log(team2NameIdx, team2Name, 'team2NameIdx')
