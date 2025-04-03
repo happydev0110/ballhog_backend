@@ -15,6 +15,19 @@ export const WIN_POINT_RULES = {
     100: 360
 }
 
+export const WIN_POINT_RULES_1V1 = {
+    5: 9,
+    10: 18,
+    25: 45,
+    50: 90,
+    100: 180
+}
+
+export const PAYOUT = {
+    1: '1V4',
+    2: '1V1',
+}
+
 export const URL = {
     NCAA_TODAY_EVENT: 'https://site.api.espn.com/apis/site/v2/sports/basketball/mens-college-basketball/scoreboard',
     SOCCER_TODAY_EVENT: "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard",
