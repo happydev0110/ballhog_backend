@@ -16,11 +16,11 @@ export const WIN_POINT_RULES = {
 }
 
 export const WIN_POINT_RULES_1V1 = {
-    5: 9,
-    10: 18,
-    25: 45,
-    50: 90,
-    100: 180
+    5: 9.5,
+    10: 19,
+    25: 47.5,
+    50: 95,
+    100: 190
 }
 
 export const PAYOUT = {
