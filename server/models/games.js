@@ -13,7 +13,7 @@ const gameSchema = new mongoose.Schema(
       type: String,
       default: 'NFL'
     },
-    teams:{
+    teams: {
       type: Array
     },
     entryPoint: {
@@ -27,6 +27,10 @@ const gameSchema = new mongoose.Schema(
     winPoint: {
       type: Number,
       default: 0
+    },
+    payout: {//-1: free game, 0: 1v4, 1: 1v1 
+      type: Number,
+      default: -1
     },
     selectedTeam: {//
       type: Number,
@@ -44,7 +48,7 @@ const gameSchema = new mongoose.Schema(
       type: Number,
       default: 1
     },
-    createdLink:{
+    createdLink: {
       type: String,
       default: "https://www.playballhog.com/playGames"
     }
