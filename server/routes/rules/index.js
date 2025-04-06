@@ -540,13 +540,13 @@ export const getCheckedDS = async (req, res) => {
                 }
             }
             console.log(result, 'result');
-            
+
             selTeamIdx = selectedTeamIdx;
             tableScore = result?.score;
             selTextIdx = textIndex;
             selTblIdx = tableIndex;
             increaseAmount = increaseAmount;
-            description = result.description;
+            description = result?.description;
             time = result.sequenceTime;
             historyList = hisList
             winProbability = winProbabilityData;
@@ -554,8 +554,8 @@ export const getCheckedDS = async (req, res) => {
             eventList = matchEvtList;
             resultList = DSList;
 
-            homeScore = result.homeScore;
-            awayScore = result.awayScore;
+            homeScore = result?.homeScore;
+            awayScore = result?.awayScore;
 
             if (startTime == -1) {
                 timeList = timerList;
