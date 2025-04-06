@@ -539,7 +539,6 @@ export const getCheckedDS = async (req, res) => {
                     }
                 }
             }
-            console.log(result, 'result');
 
             selTeamIdx = selectedTeamIdx;
             tableScore = result?.score;
