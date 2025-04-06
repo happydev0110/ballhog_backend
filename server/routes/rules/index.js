@@ -546,7 +546,7 @@ export const getCheckedDS = async (req, res) => {
             selTblIdx = tableIndex;
             increaseAmount = increaseAmount;
             description = result?.description;
-            time = result.sequenceTime;
+            time = result?.sequenceTime;
             historyList = hisList
             winProbability = winProbabilityData;
             prevHisList = hisList;
