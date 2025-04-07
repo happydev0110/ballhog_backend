@@ -3237,7 +3237,16 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
             }
         }
     }
-
+    // SOCCER-DS21
+    if (dataTypeItem.no === 'SOCCER-DS21') {
+        if (currentPlayItem.text === undefined) {
+            status = true;
+        } else {
+            if (currentPlayItem.text.indexOf('Attempt missed') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1Abbre))) {
+                status = true;
+            }
+        }
+    }
     // SOCCER-DS22
     if (dataTypeItem.no === 'SOCCER-DS22') {
         if (currentPlayItem.play === undefined || currentPlayItem.play.type === undefined) {

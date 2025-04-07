@@ -125,7 +125,7 @@ export const SOCCER_DS = [
         typeId: false,
         logo: 1,
         scoreValue: -1,
-        Increase: 3,
+        Increase: 4,
         rotation: true
     },
     {//DataSet14-1 CT1
@@ -176,8 +176,8 @@ export const SOCCER_DS = [
     // Not complete
     {//DataSet21 MISST1
         no: 'SOCCER-DS21',
-        teamId: false,
-        typeId: 117,
+        teamId: -1,
+        typeId: false,
         scoreValue: -1,
         Increase: false,
         rotation: true,
