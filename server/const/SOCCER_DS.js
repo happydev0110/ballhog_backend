@@ -31,8 +31,8 @@ export const SOCCER_DS = [
     },
     {//DataSet3 OST1
         no: 'SOCCER-DS3',
-        teamId: -1,
-        typeId: 68,
+        teamId: false,
+        typeId: false,
         scoreValue: -1,
         Increase: false,
         rotation: true,
@@ -40,8 +40,8 @@ export const SOCCER_DS = [
     },
     {//DataSet4 OST2
         no: 'SOCCER-DS4',
-        teamId: -1,
-        typeId: 68,
+        teamId: true,
+        typeId: false,
         scoreValue: -1,
         Increase: 2,
         rotation: false,

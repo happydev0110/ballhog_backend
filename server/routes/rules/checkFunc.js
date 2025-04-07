@@ -3083,7 +3083,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1Abbre)) {
+            if (currentPlayItem.text.indexOf('Offside,') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1Abbre))) {
                 status = true;
             }
         }
@@ -3093,7 +3093,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (!includesSimilarWord(currentPlayItem.text, team2Name) && !includesSimilarWord(currentPlayItem.text, team2Abbre)) {
+            if (currentPlayItem.text.indexOf('Offside,') === -1 || (!includesSimilarWord(currentPlayItem.text, team2Name) && !includesSimilarWord(currentPlayItem.text, team2Abbre))) {
                 status = true;
             }
         }
