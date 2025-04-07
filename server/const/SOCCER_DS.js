@@ -286,7 +286,7 @@ export const SOCCER_DS = [
     {//DataSet29 shotblockedT1
         no: 'SOCCER-DS29',
         teamId: true,
-        typeId: 135,
+        typeId: false,
         scoreValue: -1,
         Increase: 1,
         rotation: false

@@ -3360,6 +3360,16 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
             }
         }
     }
+    // SOCCER-DS29
+    if (dataTypeItem.no === 'SOCCER-DS29') {
+        if (currentPlayItem.text === undefined) {
+            status = true;
+        } else {
+            if (currentPlayItem.text.indexOf('Attempt blocked') === -1 || (!includesSimilarWord(currentPlayItem.text, team2Name) && !includesSimilarWord(currentPlayItem.text, team2Abbre))) {
+                status = true;
+            }
+        }
+    }
     // SOCCER-DS30
     if (dataTypeItem.no === 'SOCCER-DS30') {
         if (currentPlayItem.text === undefined) {
