@@ -148,7 +148,6 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
         if (currentPlayItem === undefined || currentPlayItem.text === undefined || currentPlayItem.type === undefined || PREV_NHL_DS2 === undefined || PREV_NHL_DS2.type === undefined || currentPlayItem.wallclock === undefined || PREV_NHL_DS2.wallclock === undefined) {
             status = true;
         } else {
-            console.log(getTimeFromClock(currentPlayItem.clock.displayValue, prevPlayItem.clock.displayValue), 'get Time Value')
             if (currentPlayItem.text.toLowerCase().includes('timeout') || currentPlayItem.text.toLowerCase().includes('challenge') || currentPlayItem.text.toLowerCase().includes('review') || currentPlayItem.text.toLowerCase().includes('objects') || getTimeFromClock(currentPlayItem.clock.displayValue, prevPlayItem.clock.displayValue) > 30 || prevPlayItem.type.id != 516) {
                 status = true;
             }
@@ -3161,7 +3160,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Attempt saved') === -1 || (!currentPlayItem.text.toLowerCase().includes(team1Name.toLowerCase()) && !currentPlayItem.text.toLowerCase().includes(team1Abbre.toLowerCase()))) {
+            if (currentPlayItem.text.indexOf('Attempt saved') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1Abbre))) {
                 status = true;
             }
         }

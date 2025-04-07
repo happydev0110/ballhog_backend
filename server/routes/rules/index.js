@@ -124,9 +124,9 @@ export const getCheckedDS = async (req, res) => {
                                 // let team1NameIdx = findSimilarWordPosition(currentPlayItem.text, team1Name);
                                 // let team2NameIdx = findSimilarWordPosition(currentPlayItem.text, team2Name);
 
-                                console.log(team1NameIdx, team1Name, 'team1NameIdx')
-                                console.log(team2NameIdx, team2Name, 'team2NameIdx')
-                                console.log(currentPlayItem.text,'current text')
+                                // console.log(team1NameIdx, team1Name, 'team1NameIdx')
+                                // console.log(team2NameIdx, team2Name, 'team2NameIdx')
+                                // console.log(currentPlayItem.text,'current text')
 
                                 // if (team1NameIdx == -1) team1NameIdx = currentPlayItem.text.indexOf(team1Name);
                                 // if (team2NameIdx == -1) team2NameIdx = currentPlayItem.text.indexOf(team2Name);
