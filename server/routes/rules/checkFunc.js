@@ -3077,6 +3077,28 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
 export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, team1Id, team2Id, team1Name, team2Name, team1Abbre, team2Abbre, matchTeamId) => {
     let status = false;
     let team1Score, team2Score;
+
+    // SOCCER-DS3
+    if (dataTypeItem.no === 'SOCCER-DS3') {
+        if (currentPlayItem.text === undefined) {
+            status = true;
+        } else {
+            if (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1Abbre)) {
+                status = true;
+            }
+        }
+    }
+    // SOCCER-DS4
+    if (dataTypeItem.no === 'SOCCER-DS4') {
+        if (currentPlayItem.text === undefined) {
+            status = true;
+        } else {
+            if (!includesSimilarWord(currentPlayItem.text, team2Name) && !includesSimilarWord(currentPlayItem.text, team2Abbre)) {
+                status = true;
+            }
+        }
+    }
+
     // SOCCER-DS7
     if (dataTypeItem.no === 'SOCCER-DS7') {
         if (currentPlayItem.text === undefined) {
