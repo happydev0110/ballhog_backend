@@ -76,7 +76,7 @@
 
 export const findSimilarWordPosition = (sentence, word) => {
     // Normalize both sentence and word by converting to lowercase and replacing spaces and hyphens with a placeholder
-    const normalize = (str) => str.toLowerCase().replace(/[\s-]/g, ' ');
+    const normalize = (str) => str.toLowerCase().replace(/[\s-]/g, ' ').replace(/&/g, 'and');
 
     const normalizedSentence = normalize(sentence);
     const normalizedWord = normalize(word);
@@ -101,11 +101,11 @@ export const includesSimilarWord = (sentence, word) => {
         .replace(/[\s-]/g, '')           // Remove spaces and hyphens
         .replace(/&/g, 'and')            // Replace '&' with 'and'
         .toLowerCase();                  // Convert to lowercase
-  
+
     const normalizedSentence = normalize(sentence);
     const normalizedWord = normalize(word);
     return normalizedSentence.includes(normalizedWord);
-  }
+}
 
 export const isValidDate = (dateString) => {
     const dateObject = new Date(dateString);
