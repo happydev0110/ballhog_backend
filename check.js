@@ -36,4 +36,5 @@ export const includesSimilarWord = (sentence, word) => {
 //   return normalizedSentence.includes(normalizedWord);
 // }
 
-console.log(includesSimilarWord('apple and orange admin', 'apple and orange'))
+console.log(includesSimilarWord("Attempt saved. Jordi Alba (Inter Miami CF) left footed shot from outside the box is saved in the centre of the goal. Assisted by Lionel Messi.", 'Inter Miami CF'))
+console.log(includesSimilarWord("Attempt saved. Telasco Segovia (Inter Miami CF) right footed shot from the right side of the box is saved in the top right corner.", 'Inter Miami CF'))
