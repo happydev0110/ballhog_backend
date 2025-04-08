@@ -90,7 +90,7 @@ export const findSimilarWordPosition = (sentence, word) => {
 
 export const isSimilar = (name1, name2) => {
     // Remove spaces and hyphens and convert both names to lowercase
-    const normalize = (name) => name.replace(/[\s-]/g, '').toLowerCase();
+    const normalize = (name) => name.replace(/[\s-]/g, '').replace(/&/g, 'and').toLowerCase();
 
     return normalize(name1) === normalize(name2);
 }

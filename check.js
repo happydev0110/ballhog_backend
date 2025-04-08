@@ -36,4 +36,4 @@ export const includesSimilarWord = (sentence, word) => {
 //   return normalizedSentence.includes(normalizedWord);
 // }
 
-console.log(includesSimilarWord('apple and orange admin', 'apple & orange'))
+console.log(includesSimilarWord('apple and orange admin', 'apple and orange'))
