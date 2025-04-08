@@ -3083,8 +3083,9 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if(currentPlayItem.sequence == 16){
-                console.log(includesSimilarWord(currentPlayItem.text, team1Name), includesSimilarWord(currentPlayItem.text, team1Abbre),'team1')
+            if (currentPlayItem.sequence == 16) {
+                console.log(currentPlayItem.text, team1Name, team1Abbre, 'team1')
+                console.log(includesSimilarWord(currentPlayItem.text, team1Name), includesSimilarWord(currentPlayItem.text, team1Abbre), 'team1')
             }
             if (currentPlayItem.text.indexOf('Offside,') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1Abbre))) {
                 status = true;
