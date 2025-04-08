@@ -97,7 +97,11 @@ export const isSimilar = (name1, name2) => {
 
 export const includesSimilarWord = (sentence, word) => {
     // Normalize both sentence and word by removing spaces and hyphens
-    const normalize = (str) => str.replace(/[\s-]/g, '').toLowerCase();
+    // and replace 'and' with '&' for comparison
+    const normalize = (str) => str
+        .replace(/[\s-]/g, '')       // Remove spaces and hyphens
+        .replace(/\b(and|&)\b/g, '&') // Replace 'and' or '&' with '&'
+        .toLowerCase();              // Convert to lowercase
 
     const normalizedSentence = normalize(sentence);
     const normalizedWord = normalize(word);

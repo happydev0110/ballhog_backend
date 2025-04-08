@@ -3087,6 +3087,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
                 console.log(currentPlayItem.text, team1Name, team1Abbre, 'team1')
                 console.log(includesSimilarWord(currentPlayItem.text, team1Name), includesSimilarWord(currentPlayItem.text, team1Abbre), 'team1')
             }
+            
             if (currentPlayItem.text.indexOf('Offside,') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1Abbre))) {
                 status = true;
             }
