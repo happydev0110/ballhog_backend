@@ -6,8 +6,6 @@ import { changeTeamIdx, getWinProbability, handleScore, handleSoccerScore, merge
 export const getCheckedDS = async (req, res) => {
     const { event, team1Idx, sportCategory } = req.body;
 
-    // console.log(event, team1Idx, sportCategory, 'sports event');
-
     let selTeamIdx;
     let tableScore = [0, 0, 0, 0];
     let selTextIdx;
@@ -561,9 +559,7 @@ export const getCheckedDS = async (req, res) => {
             }
         }
     }
-    // res.json({
-    //     // history: historyList
-    // })
+    
     res.json({
         selTeamIdx,
         tableScore,
