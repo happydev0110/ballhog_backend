@@ -1,31 +1,31 @@
-export const isSimilar = (word1, word2) => {
-    if (Math.abs(word1.length - word2.length) > 2) return false; // Too different in length
+// export const isSimilar = (word1, word2) => {
+//     if (Math.abs(word1.length - word2.length) > 2) return false; // Too different in length
 
-    let diffCount = 0;
-    let i = 0, j = 0;
+//     let diffCount = 0;
+//     let i = 0, j = 0;
 
-    while (i < word1.length && j < word2.length) {
-        if (word1[i] !== word2[j]) {
-            diffCount++;
-            if (diffCount > 2) return false; // More than 2 differences → not similar
+//     while (i < word1.length && j < word2.length) {
+//         if (word1[i] !== word2[j]) {
+//             diffCount++;
+//             if (diffCount > 2) return false; // More than 2 differences → not similar
 
-            if (word1.length > word2.length) {
-                i++; // Skip a character in word1 (deletion)
-            } else if (word1.length < word2.length) {
-                j++; // Skip a character in word2 (insertion)
-            } else {
-                i++;
-                j++;
-            }
-        } else {
-            i++;
-            j++;
-        }
-    }
+//             if (word1.length > word2.length) {
+//                 i++; // Skip a character in word1 (deletion)
+//             } else if (word1.length < word2.length) {
+//                 j++; // Skip a character in word2 (insertion)
+//             } else {
+//                 i++;
+//                 j++;
+//             }
+//         } else {
+//             i++;
+//             j++;
+//         }
+//     }
 
-    diffCount += Math.abs(word1.length - word2.length);
-    return diffCount <= 2;
-}
+//     diffCount += Math.abs(word1.length - word2.length);
+//     return diffCount <= 2;
+// }
 
 export const findSimilarWordPosition = (sentence, targetWord) => {
     const normalizedSentence = sentence
@@ -58,21 +58,28 @@ export const findSimilarWordPosition = (sentence, targetWord) => {
     return charPosition;
 }
 
-export const includesSimilarWord1 = (sentence, targetWord) => {
-    // Normalize and process sentence and targetWord
-    const normalizedSentence = sentence
-        .toLowerCase()  // Convert to lowercase for case-insensitive comparison
-        .replace(/[^a-zA-Z0-9\s-]/g, "")  // Remove non-alphanumeric characters except hyphen
-        .split(/\s+/);  // Split the sentence into words
+export const isSimilar = (name1, name2) => {
+    // Remove spaces and hyphens and convert both names to lowercase
+    const normalize = (name) => name.replace(/[\s-]/g, '').toLowerCase();
 
-    // Split targetWord into parts (in case it contains multiple words like "Paris Saint-Germain")
-    const targetParts = targetWord.toLowerCase().split(/\s|-/);  // Split by space or hyphen
-
-    // Compare each word in the sentence with the parts of the target word
-    return normalizedSentence.some(word =>
-        targetParts.some(part => isSimilar(word, part))
-    );
+    return normalize(name1) === normalize(name2);
 }
+
+// export const includesSimilarWord1 = (sentence, targetWord) => {
+//     // Normalize and process sentence and targetWord
+//     const normalizedSentence = sentence
+//         .toLowerCase()  // Convert to lowercase for case-insensitive comparison
+//         .replace(/[^a-zA-Z0-9\s-]/g, "")  // Remove non-alphanumeric characters except hyphen
+//         .split(/\s+/);  // Split the sentence into words
+
+//     // Split targetWord into parts (in case it contains multiple words like "Paris Saint-Germain")
+//     const targetParts = targetWord.toLowerCase().split(/\s|-/);  // Split by space or hyphen
+
+//     // Compare each word in the sentence with the parts of the target word
+//     return normalizedSentence.some(word =>
+//         targetParts.some(part => isSimilar(word, part))
+//     );
+// }
 
 export const includesSimilarWord = (sentence, word) => {
     // Normalize both sentence and word by removing spaces and hyphens
