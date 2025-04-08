@@ -3202,8 +3202,6 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            console.log(includesSimilarWord(currentPlayItem.text, team1Name),includesSimilarWord(currentPlayItem.text, team1Abbre), currentPlayItem.sequence,'team1 Name check')
-            console.log(includesSimilarWord(currentPlayItem.text, team2Name),includesSimilarWord(currentPlayItem.text, team2Abbre), currentPlayItem.sequence,'team2 Name check')
             if (currentPlayItem.text.indexOf('Corner,') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1Abbre))) {
                 status = true;
             }
