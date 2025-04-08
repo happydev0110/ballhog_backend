@@ -29,36 +29,36 @@ export const isSimilar = (word1, word2) => {
 
 export const findSimilarWordPosition = (sentence, targetWord) => {
     const normalizedSentence = sentence
-    .toLowerCase()  // Convert to lowercase for case-insensitive comparison
-    .replace(/[^a-zA-Z0-9\s-]/g, "")  // Remove non-alphanumeric characters except hyphen
-    .split(/\s+/);  // Split the sentence into words
+        .toLowerCase()  // Convert to lowercase for case-insensitive comparison
+        .replace(/[^a-zA-Z0-9\s-]/g, "")  // Remove non-alphanumeric characters except hyphen
+        .split(/\s+/);  // Split the sentence into words
 
-  // Split targetWord into parts (in case it contains multiple words like "Paris Saint-Germain")
-  const targetParts = targetWord.toLowerCase().split(/\s|-/);  // Split by space or hyphen
+    // Split targetWord into parts (in case it contains multiple words like "Paris Saint-Germain")
+    const targetParts = targetWord.toLowerCase().split(/\s|-/);  // Split by space or hyphen
 
-  // Iterate through the sentence and check for similar words
-  let charPosition = -1; // Default to -1, meaning no match
-  let sentencePos = 0; // Keeps track of the character position in the sentence
+    // Iterate through the sentence and check for similar words
+    let charPosition = -1; // Default to -1, meaning no match
+    let sentencePos = 0; // Keeps track of the character position in the sentence
 
-  for (let i = 0; i < normalizedSentence.length; i++) {
-    for (let j = 0; j < targetParts.length; j++) {
-      if (isSimilar(normalizedSentence[i], targetParts[j])) {
-        // If a match is found, calculate the character position in the original sentence
-        const matchIndex = sentence.indexOf(normalizedSentence[i], sentencePos);
-        if (matchIndex !== -1) {
-          charPosition = matchIndex;
-          return charPosition; // Return the first character position of the match
+    for (let i = 0; i < normalizedSentence.length; i++) {
+        for (let j = 0; j < targetParts.length; j++) {
+            if (isSimilar(normalizedSentence[i], targetParts[j])) {
+                // If a match is found, calculate the character position in the original sentence
+                const matchIndex = sentence.indexOf(normalizedSentence[i], sentencePos);
+                if (matchIndex !== -1) {
+                    charPosition = matchIndex;
+                    return charPosition; // Return the first character position of the match
+                }
+            }
         }
-      }
+        sentencePos += normalizedSentence[i].length + 1; // Update the position for the next word (including space)
     }
-    sentencePos += normalizedSentence[i].length + 1; // Update the position for the next word (including space)
-  }
 
-  // Return -1 if no similar word is found
-  return charPosition;
+    // Return -1 if no similar word is found
+    return charPosition;
 }
 
-export const includesSimilarWord = (sentence, targetWord) => {
+export const includesSimilarWord1 = (sentence, targetWord) => {
     // Normalize and process sentence and targetWord
     const normalizedSentence = sentence
         .toLowerCase()  // Convert to lowercase for case-insensitive comparison
@@ -72,6 +72,16 @@ export const includesSimilarWord = (sentence, targetWord) => {
     return normalizedSentence.some(word =>
         targetParts.some(part => isSimilar(word, part))
     );
+}
+
+export const includesSimilarWord = (sentence, word) => {
+    // Normalize both sentence and word by removing spaces and hyphens
+    const normalize = (str) => str.replace(/[\s-]/g, '').toLowerCase();
+
+    const normalizedSentence = normalize(sentence);
+    const normalizedWord = normalize(word);
+
+    return normalizedSentence.includes(normalizedWord);
 }
 
 export const isValidDate = (dateString) => {
