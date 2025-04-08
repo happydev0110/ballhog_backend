@@ -96,18 +96,16 @@ export const isSimilar = (name1, name2) => {
 }
 
 export const includesSimilarWord = (sentence, word) => {
-    // Normalize both sentence and word by removing spaces and hyphens
-    // and replace 'and' with '&' for comparison
+    // Normalize both sentence and word by removing spaces, hyphens, and replacing '&' with 'and'
     const normalize = (str) => str
-        .replace(/[\s-]/g, '')       // Remove spaces and hyphens
-        .replace(/\b(and|&)\b/g, '&') // Replace 'and' or '&' with '&'
-        .toLowerCase();              // Convert to lowercase
-
+        .replace(/[\s-]/g, '')           // Remove spaces and hyphens
+        .replace(/&/g, 'and')            // Replace '&' with 'and'
+        .toLowerCase();                  // Convert to lowercase
+  
     const normalizedSentence = normalize(sentence);
     const normalizedWord = normalize(word);
-
     return normalizedSentence.includes(normalizedWord);
-}
+  }
 
 export const isValidDate = (dateString) => {
     const dateObject = new Date(dateString);
