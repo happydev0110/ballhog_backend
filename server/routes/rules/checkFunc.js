@@ -3196,10 +3196,10 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.sequence == 4 || currentPlayItem.sequence == 5) {
-                console.log(currentPlayItem.text, team2Name, team2Abbre, 'team2 Name in DS12')
-                console.log(includesSimilarWord(currentPlayItem.text, team2Name), includesSimilarWord(currentPlayItem.text, team2Abbre), 'words in DS12')
-            }
+            // if (currentPlayItem.sequence == 4 || currentPlayItem.sequence == 5) {
+            //     console.log(currentPlayItem.text, team2Name, team2Abbre, 'team2 Name in DS12')
+            //     console.log(includesSimilarWord(currentPlayItem.text, team2Name), includesSimilarWord(currentPlayItem.text, team2Abbre), 'words in DS12')
+            // }
             if (currentPlayItem.text.indexOf('Attempt saved') === -1 || (!includesSimilarWord(currentPlayItem.text, team2Name) && !includesSimilarWord(currentPlayItem.text, team2Abbre))) {
                 status = true;
             }
