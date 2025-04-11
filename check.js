@@ -36,5 +36,11 @@ export const includesSimilarWord = (sentence, word) => {
 //   return normalizedSentence.includes(normalizedWord);
 // }
 
-console.log(includesSimilarWord("Attempt saved. Jordi Alba (Inter Miami CF) left footed shot from outside the box is saved in the centre of the goal. Assisted by Lionel Messi.", 'Inter Miami CF'))
-console.log(includesSimilarWord("Attempt saved. Telasco Segovia (Inter Miami CF) right footed shot from the right side of the box is saved in the top right corner.", 'Inter Miami CF'))
+console.log(includesSimilarWord("Attempt saved. Aymen Sliti (Feyenoord) left footed shot from outside the box is saved in the centre of the goal. Assisted by Gijs Smal.", "Feyenoord Rotterdam"))
+
+console.log(includesSimilarWord("Attempt saved. Aymen Sliti (Feyenoord) left footed shot from outside the box is saved in the centre of the goal. Assisted by Gijs Smal.", "FEY"))
+
+console.log(includesSimilarWord("Attempt saved. Aymen Sliti (Feyenoord) left footed shot from outside the box is saved in the centre of the goal. Assisted by Gijs Smal.", "Internazionale"))
+
+console.log(includesSimilarWord("Attempt saved. Aymen Sliti (Feyenoord) left footed shot from outside the box is saved in the centre of the goal. Assisted by Gijs Smal.", "INT"))
+// console.log(includesSimilarWord("Attempt saved. Telasco Segovia (Inter Miami CF) right footed shot from the right side of the box is saved in the top right corner.", 'Inter Miami CF'))

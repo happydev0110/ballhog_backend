@@ -3074,7 +3074,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
     return status;
 }
 
-export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, team1Id, team2Id, team1Name, team2Name, team1Abbre, team2Abbre, matchTeamId) => {
+export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, team1Id, team2Id, team1Name, team2Name, team1Abbre, team2Abbre, team1ShortName, team2ShortName, matchTeamId) => {
     let status = false;
     let team1Score, team2Score;
 
@@ -3083,7 +3083,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Offside,') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1Abbre))) {
+            if (currentPlayItem.text.indexOf('Offside,') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1ShortName))) {
                 status = true;
             }
         }
@@ -3093,7 +3093,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Offside,') === -1 || (!includesSimilarWord(currentPlayItem.text, team2Name) && !includesSimilarWord(currentPlayItem.text, team2Abbre))) {
+            if (currentPlayItem.text.indexOf('Offside,') === -1 || (!includesSimilarWord(currentPlayItem.text, team2Name) && !includesSimilarWord(currentPlayItem.text, team2ShortName))) {
                 status = true;
             }
         }
@@ -3182,11 +3182,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.sequence == 4 || currentPlayItem.sequence == 5) {
-                console.log(currentPlayItem.text, team1Name, team1Abbre, 'team1 Name in DS11')
-                console.log(includesSimilarWord(currentPlayItem.text, team1Name), includesSimilarWord(currentPlayItem.text, team1Abbre), 'words in DS11')
-            }
-            if (currentPlayItem.text.indexOf('Attempt saved') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1Abbre))) {
+            if (currentPlayItem.text.indexOf('Attempt saved') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1ShortName))) {
                 status = true;
             }
         }
@@ -3196,11 +3192,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            // if (currentPlayItem.sequence == 4 || currentPlayItem.sequence == 5) {
-            //     console.log(currentPlayItem.text, team2Name, team2Abbre, 'team2 Name in DS12')
-            //     console.log(includesSimilarWord(currentPlayItem.text, team2Name), includesSimilarWord(currentPlayItem.text, team2Abbre), 'words in DS12')
-            // }
-            if (currentPlayItem.text.indexOf('Attempt saved') === -1 || (!includesSimilarWord(currentPlayItem.text, team2Name) && !includesSimilarWord(currentPlayItem.text, team2Abbre))) {
+            if (currentPlayItem.text.indexOf('Attempt saved') === -1 || (!includesSimilarWord(currentPlayItem.text, team2Name) && !includesSimilarWord(currentPlayItem.text, team2ShortName))) {
                 status = true;
             }
         }
@@ -3210,7 +3202,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Corner,') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1Abbre))) {
+            if (currentPlayItem.text.indexOf('Corner,') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1ShortName))) {
                 status = true;
             }
         }
@@ -3230,7 +3222,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Corner,') === -1 || (!includesSimilarWord(currentPlayItem.text, team2Name) && !includesSimilarWord(currentPlayItem.text, team2Abbre))) {
+            if (currentPlayItem.text.indexOf('Corner,') === -1 || (!includesSimilarWord(currentPlayItem.text, team2Name) && !includesSimilarWord(currentPlayItem.text, team2ShortName))) {
                 status = true;
             }
         }
@@ -3250,7 +3242,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Attempt missed') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1Abbre))) {
+            if (currentPlayItem.text.indexOf('Attempt missed') === -1 || (!includesSimilarWord(currentPlayItem.text, team1Name) && !includesSimilarWord(currentPlayItem.text, team1ShortName))) {
                 status = true;
             }
         }
@@ -3373,7 +3365,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Attempt blocked') === -1 || (!includesSimilarWord(currentPlayItem.text, team2Name) && !includesSimilarWord(currentPlayItem.text, team2Abbre))) {
+            if (currentPlayItem.text.indexOf('Attempt blocked') === -1 || (!includesSimilarWord(currentPlayItem.text, team2Name) && !includesSimilarWord(currentPlayItem.text, team2ShortName))) {
                 status = true;
             }
         }

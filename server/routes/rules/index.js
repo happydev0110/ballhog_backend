@@ -45,7 +45,7 @@ export const getCheckedDS = async (req, res) => {
     let matchEvtList = [];
     let selectedTeamIdx = 0;
     let score = [0, 0, 0, 0], tableIndex = 0, textIndex = 0, increaseAmount;
-    let team1Id, team2Id, team1Name, team2Name, team1Abbre, team2Abbre;
+    let team1Id, team2Id, team1Name, team2Name, team1Abbre, team2Abbre, team1ShortName, team2ShortName;
 
     let hisList = [];
     let DSList = [[]];
@@ -78,7 +78,9 @@ export const getCheckedDS = async (req, res) => {
         team2Name = resList.boxscore.teams[(parseInt(team1Idx) + 1) % 2].team.name;
         team1Abbre = resList.boxscore.teams[team1Idx].team.abbreviation;                        //team1 abbreviation
         team2Abbre = resList.boxscore.teams[(parseInt(team1Idx) + 1) % 2].team.abbreviation;
-
+        team1ShortName = resList.boxscore.teams[team1Idx].team.shortDisplayName;                //team1 Short Name
+        team2ShortName = resList.boxscore.teams[(parseInt(team1Idx) + 1) % 2].team.shortDisplayName;
+        
         // if (team1Name.includes('&')) {
         //     team1Name = team1Name.replace('&', 'and');
         // }
@@ -104,7 +106,7 @@ export const getCheckedDS = async (req, res) => {
                     var dataTypeItem = dataSetType[j];
                     var matchTeamId = team1Id;
 
-                    if (checkSoccerFunc(dataTypeItem, currentPlayItem, prevPlayItem, team1Id, team2Id, team1Name, team2Name, team1Abbre, team2Abbre, matchTeamId)) {
+                    if (checkSoccerFunc(dataTypeItem, currentPlayItem, prevPlayItem, team1Id, team2Id, team1Name, team2Name, team1Abbre, team2Abbre, team1ShortName, team2ShortName, matchTeamId)) {
                         continue;
                     }
 
