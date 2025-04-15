@@ -155,7 +155,7 @@ export const getCheckedDS = async (req, res) => {
                         if (currentPlayItem.play.team === undefined) {
                             selectedTeamIdx = -1
                         } else {
-                            if (currentPlayItem.play.team.displayName === team1Name) {
+                            if (currentPlayItem.play.team.name === team1Name) {
                                 selectedTeamIdx = teamIndex;
                             } else {
                                 selectedTeamIdx = (parseInt(teamIndex) + 1) % 2;
