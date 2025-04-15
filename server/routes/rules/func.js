@@ -1,3 +1,5 @@
+import { UNVALID_SOCCER_TEAMNAME } from "../../const/index.js";
+
 // export const isSimilar = (word1, word2) => {
 //     if (Math.abs(word1.length - word2.length) > 2) return false; // Too different in length
 
@@ -103,8 +105,16 @@ export const includesSimilarWord = (sentence, word) => {
         .toLowerCase();                  // Convert to lowercase
 
     const normalizedSentence = normalize(sentence);
-    const normalizedWord = normalize(word);
+    const normalizedWord = normalize(checkSoccerTeamName(word));
     return normalizedSentence.includes(normalizedWord);
+}
+
+export const checkSoccerTeamName = (word) => {
+    if(UNVALID_SOCCER_TEAMNAME[word]){
+        return UNVALID_SOCCER_TEAMNAME[word]
+    } else {
+        return word
+    }
 }
 
 export const isValidDate = (dateString) => {

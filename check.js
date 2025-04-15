@@ -26,6 +26,7 @@ export const includesSimilarWord = (sentence, word) => {
   const normalizedWord = normalize(word);
   return normalizedSentence.includes(normalizedWord);
 }
+
 // export const includesSimilarWord = (sentence, word) => {
 //   // Normalize both sentence and word by removing spaces and hyphens
 //   const normalize = (str) => str.replace(/[\s-]/g, '').toLowerCase();
@@ -43,4 +44,5 @@ console.log(includesSimilarWord("Attempt saved. Aymen Sliti (Feyenoord) left foo
 console.log(includesSimilarWord("Attempt saved. Aymen Sliti (Feyenoord) left footed shot from outside the box is saved in the centre of the goal. Assisted by Gijs Smal.", "Internazionale"))
 
 console.log(includesSimilarWord("Attempt saved. Aymen Sliti (Feyenoord) left footed shot from outside the box is saved in the centre of the goal. Assisted by Gijs Smal.", "INT"))
-// console.log(includesSimilarWord("Attempt saved. Telasco Segovia (Inter Miami CF) right footed shot from the right side of the box is saved in the top right corner.", 'Inter Miami CF'))
+
+console.log(includesSimilarWord("Attempt saved. Telasco Segovia (Inter Miami CF) right footed shot from the right side of the box is saved in the top right corner.", 'Inter Miami CF'))
