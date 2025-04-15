@@ -20,7 +20,7 @@ export const getCheckedDS = async (req, res) => {
     let timeList;
 
     let winProbability;
-    let selectedTeam1s = [0, 0, 0, 0]
+    // let selectedTeam1s = [0, 0, 0, 0]
     let homeScore = 0;
     let awayScore = 0;
 
@@ -97,7 +97,7 @@ export const getCheckedDS = async (req, res) => {
             for (let i = 0; i < resList.commentary.length; i++) {
                 // console.log(i, 'soccer item')
                 // let teamIndex = selectedTeam1s[tableIndex];
-                let teamIndex = team1Idx;
+                // let teamIndex = team1Idx;
 
                 for (let j = 0; j < dataSetType.length; j++) {
                     currentPlayItem = resList.commentary[i];
@@ -163,7 +163,9 @@ export const getCheckedDS = async (req, res) => {
                             }
                         }
                     }
-
+                    if (currentPlayItem.sequence == 112) {
+                        console.log(selectedTeamIdx,'teamIdx')
+                    }
                     if (tableIndex != result.tableIndex) {
                         hisList[result.tableIndex] = [];
                     }
@@ -185,6 +187,10 @@ export const getCheckedDS = async (req, res) => {
                         // if(currentPlayItem.sequence == 112){
                             console.log(team1Idx, 'teamIdx in Soccer')
                         // }
+                    }
+
+                    if (currentPlayItem.sequence == 112) {
+                        console.log(historyItem.teamIdx,'historyItem.teamIdx')
                     }
 
                     /* set reverse teamIdx for logo */
