@@ -96,7 +96,8 @@ export const getCheckedDS = async (req, res) => {
 
             for (let i = 0; i < resList.commentary.length; i++) {
                 // console.log(i, 'soccer item')
-                let teamIndex = selectedTeam1s[tableIndex];
+                // let teamIndex = selectedTeam1s[tableIndex];
+                let teamIndex = team1Idx;
 
                 for (let j = 0; j < dataSetType.length; j++) {
                     currentPlayItem = resList.commentary[i];
