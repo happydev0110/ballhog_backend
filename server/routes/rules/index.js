@@ -151,17 +151,20 @@ export const getCheckedDS = async (req, res) => {
                     hisList = prevHisList;
 
                     /* For Logos */
-                    // if (currentPlayItem.play) {
-                    //     if (currentPlayItem.play.team === undefined) {
-                    //         selectedTeamIdx = -1
-                    //     } else {
-                    //         if (currentPlayItem.play.team.displayName === team1Name) {
-                    //             selectedTeamIdx = team1Idx;
-                    //         } else {
-                    //             selectedTeamIdx = (parseInt(team1Idx) + 1) % 2;
-                    //         }
-                    //     }
-                    // }
+                    if (currentPlayItem.play) {
+                        if (currentPlayItem.play.team === undefined) {
+                            selectedTeamIdx = -1
+                        } else {
+                            if (currentPlayItem.sequence == 112) {
+                                console.log(selectedTeamIdx, team1Idx,'sequence 112')
+                            }
+                            if (currentPlayItem.play.team.displayName === team1Name) {
+                                selectedTeamIdx = team1Idx;
+                            } else {
+                                selectedTeamIdx = (parseInt(team1Idx) + 1) % 2;
+                            }
+                        }
+                    }
                     
                     if (currentPlayItem.sequence == 112) {
                         console.log(selectedTeamIdx, team1Idx,'teamIdx')
