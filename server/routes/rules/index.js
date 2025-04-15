@@ -163,6 +163,7 @@ export const getCheckedDS = async (req, res) => {
                             }
                         }
                     }
+                    
                     if (currentPlayItem.sequence == 112) {
                         console.log(selectedTeamIdx,'teamIdx')
                     }
@@ -184,9 +185,9 @@ export const getCheckedDS = async (req, res) => {
                     if (dataTypeItem.logo) {
                         historyItem.teamIdx = parseInt(team1Idx);
                         if (dataTypeItem.logo == 2) historyItem.teamIdx = (parseInt(team1Idx) + 1) % 2;
-                        // if(currentPlayItem.sequence == 112){
+                        if(currentPlayItem.sequence == 112){
                             console.log(team1Idx, 'teamIdx in Soccer')
-                        // }
+                        }
                     }
 
                     if (currentPlayItem.sequence == 112) {
