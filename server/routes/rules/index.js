@@ -155,7 +155,7 @@ export const getCheckedDS = async (req, res) => {
                         if (currentPlayItem.play.team === undefined) {
                             selectedTeamIdx = -1
                         } else {
-                            if (currentPlayItem.play.team.name === team1Name) {
+                            if (currentPlayItem.play.team.displayName === team1Name) {
                                 selectedTeamIdx = teamIndex;
                             } else {
                                 selectedTeamIdx = (parseInt(teamIndex) + 1) % 2;
@@ -181,6 +181,9 @@ export const getCheckedDS = async (req, res) => {
                     if (dataTypeItem.logo) {
                         historyItem.teamIdx = parseInt(team1Idx);
                         if (dataTypeItem.logo == 2) historyItem.teamIdx = (parseInt(team1Idx) + 1) % 2;
+                        // if(currentPlayItem.sequence == 112){
+                            console.log(team1Idx, 'teamIdx in Soccer')
+                        // }
                     }
 
                     /* set reverse teamIdx for logo */
