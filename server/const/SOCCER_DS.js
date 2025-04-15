@@ -117,7 +117,7 @@ export const SOCCER_DS = [
         scoreValue: -1,
         Increase: false,
         rotation: true,
-        logo: 2
+        logo: 2,
     },
     {//DataSet14 CT1
         no: 'SOCCER-DS14',
