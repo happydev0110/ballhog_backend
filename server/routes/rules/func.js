@@ -105,16 +105,17 @@ export const includesSimilarWord = (sentence, word) => {
         .toLowerCase();                  // Convert to lowercase
 
     const normalizedSentence = normalize(sentence);
-    const normalizedWord = normalize(checkSoccerTeamName(word));
+    const normalizedWord = normalize(word);
     return normalizedSentence.includes(normalizedWord);
 }
 
-export const checkSoccerTeamName = (word) => {
-    if(UNVALID_SOCCER_TEAMNAME[word]){
-        return UNVALID_SOCCER_TEAMNAME[word]
-    } else {
-        return word
+export const checkSoccerTeamName = (sentence, word) => {
+    let name = word;
+    if (UNVALID_SOCCER_TEAMNAME[word]) {
+        name = UNVALID_SOCCER_TEAMNAME[word];
     }
+
+    return sentence.includes(word);
 }
 
 export const isValidDate = (dateString) => {

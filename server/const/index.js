@@ -162,64 +162,64 @@ export const DATASET_TYPE_CATEGORY = {
 }
 
 export const UNVALID_SOCCER_TEAMNAME = {
-    'Brighton & Hove Albion':[
-        'Brighton and Hove Albion',
-        "BHA",                                  //Abbreviation
-        "Brighton & Hove Albion",               //displayName
-        "Brighton"                              //shortDisplayName
-    ],
-    'LAFC':[
-        'Los Angeles Football Club',
-        "LAFC",                                 //Abbreviation
-        "LAFC",                                 //displayName
-        "LAFC"                                  //shortDisplayName
-    ],
-    'Atlético Madrid':[
-        'Atletico Madrid',
-        "ATM",                                  //Abbreviation
-        "Atlético Madrid",                      //displayName
-        "Atlético"                              //shortDisplayName
-    ],
-    'Bayer Leverkusen':[
-        'Bayer 04 Leverkusen',
-        "B04",                                  //Abbreviation
-        "Bayer Leverkusen",                     //displayName
-        "Leverkusen"                            //shortDisplayName
-    ],
-    'Paris Saint-Germain':[
-        'Paris Saint Germain',
-        "PSG",                                  //Abbreviation
-        "Paris Saint-Germain",                  //displayName
-        "PSG"                                   //shortDisplayName
-    ],
-    'FC Juarez':[
-        'Juárez',
-        "JUA",                                  //Abbreviation
-        "FC Juarez",                            //displayName
-        "Juarez"                                //shortDisplayName
-    ],
-    'Atlético de San Luis':[
-        'Atlético San Luis',
-        "ASL",                                  //Abbreviation
-        "Atlético de San Luis",                 //displayName
-        "Atl. San Luis"                         //shortDisplayName
-    ],
-    'Bay FC':[
-        'Bay',
-        "BAY",                                  //Abbreviation
-        "Bay FC",                               //displayName
-        "Bay FC"                                //shortDisplayName
-    ],
-    'Alavés':[
-        'Alaves',
-        "ALA",                                  //Abbreviation
-        "Alavés",                               //displayName
-        "Alavés"                                //shortDisplayName
-    ],
-    'Leganés':[
-        'Leganes',
-        "LEG",                                  //Abbreviation
-        "Leganés",                              //displayName
-        "Leganés"                               //shortDisplayName
-    ],
+    'Brighton & Hove Albion': 'Brighton and Hove Albion',
+    // [
+    //     // "BHA",                                  //Abbreviation
+    //     // "Brighton & Hove Albion",               //displayName
+    //     // "Brighton"                              //shortDisplayName
+    // ],
+    'LAFC': 'Los Angeles Football Club',
+    // [
+    //     // "LAFC",                                 //Abbreviation
+    //     // "LAFC",                                 //displayName
+    //     // "LAFC"                                  //shortDisplayName
+    // ],
+    'Atlético Madrid': 'Atletico Madrid',
+    // [
+    //     // "ATM",                                  //Abbreviation
+    //     // "Atlético Madrid",                      //displayName
+    //     // "Atlético"                              //shortDisplayName
+    // ],
+    'Bayer Leverkusen': 'Bayer 04 Leverkusen',
+    // [
+    //     // "B04",                                  //Abbreviation
+    //     // "Bayer Leverkusen",                     //displayName
+    //     // "Leverkusen"                            //shortDisplayName
+    // ],
+    'Paris Saint-Germain': 'Paris Saint Germain',
+    // [
+    //     // "PSG",                                  //Abbreviation
+    //     // "Paris Saint-Germain",                  //displayName
+    //     // "PSG"                                   //shortDisplayName
+    // ],
+    'FC Juarez': 'Juárez',
+    // [
+    //     // "JUA",                                  //Abbreviation
+    //     // "FC Juarez",                            //displayName
+    //     // "Juarez"                                //shortDisplayName
+    // ],
+    'Atlético de San Luis': 'Atlético San Luis',
+    // [
+    //     // "ASL",                                  //Abbreviation
+    //     // "Atlético de San Luis",                 //displayName
+    //     // "Atl. San Luis"                         //shortDisplayName
+    // ],
+    'Bay FC': 'Bay',
+    // [
+    //     // "BAY",                                  //Abbreviation
+    //     // "Bay FC",                               //displayName
+    //     // "Bay FC"                                //shortDisplayName
+    // ],
+    'Alavés': 'Alaves',
+    // [
+    //     // "ALA",                                  //Abbreviation
+    //     // "Alavés",                               //displayName
+    //     // "Alavés"                                //shortDisplayName
+    // ],
+    'Leganés': 'Leganes',
+    // [
+    //     // "LEG",                                  //Abbreviation
+    //     // "Leganés",                              //displayName
+    //     // "Leganés"                               //shortDisplayName
+    // ],
 }
