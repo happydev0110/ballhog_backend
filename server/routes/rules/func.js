@@ -110,12 +110,26 @@ export const includesSimilarWord = (sentence, word) => {
 }
 
 export const checkSoccerTeamName = (sentence, word) => {
-    let name = word;
-    if (UNVALID_SOCCER_TEAMNAME[word]) {
-        name = UNVALID_SOCCER_TEAMNAME[word];
+    // let name = word;
+    // if (UNVALID_SOCCER_TEAMNAME[word]) {
+    //     name = UNVALID_SOCCER_TEAMNAME[word];
+    // }
+
+    // return sentence.includes(word);
+    // Check if the word exists in UNVALID_SOCCER_TEAMNAME
+    const variations = UNVALID_SOCCER_TEAMNAME[word];
+
+    // If the team name has variations, check for all possible names in the sentence
+    if (variations) {
+        // Convert sentence to lowercase for case-insensitive comparison
+        const lowerCaseSentence = sentence.toLowerCase();
+        
+        // Check if any of the variations are found in the sentence
+        return variations.some(variation => lowerCaseSentence.includes(variation.toLowerCase()));
     }
 
-    return sentence.includes(word);
+    // If the word doesn't have variations, just check if it's in the sentence
+    return sentence.toLowerCase().includes(word.toLowerCase());
 }
 
 export const isValidDate = (dateString) => {
