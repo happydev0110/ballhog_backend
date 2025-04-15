@@ -135,8 +135,7 @@ export const getCheckedDS = async (req, res) => {
                                 if (team1NameIdx !== -1 && team2NameIdx !== -1) {
                                     team1Score = parseInt(currentPlayItem.text.slice(team1NameIdx + team1Name.length + 1, team1NameIdx + team1Name.length + 3).trim());
                                     team2Score = parseInt(currentPlayItem.text.slice(team2NameIdx + team2Name.length + 1, team2NameIdx + team2Name.length + 3).trim());
-
-                                    console.log(team1Score, team2Score, 'Soccer Score')
+                                    // console.log(team1Score, team2Score, 'Soccer Score')
                                 }
                             }
                         }
@@ -165,7 +164,7 @@ export const getCheckedDS = async (req, res) => {
                     }
                     
                     if (currentPlayItem.sequence == 112) {
-                        console.log(selectedTeamIdx,'teamIdx')
+                        console.log(selectedTeamIdx, team1Idx,'teamIdx')
                     }
                     if (tableIndex != result.tableIndex) {
                         hisList[result.tableIndex] = [];
