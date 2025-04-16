@@ -3192,6 +3192,9 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
+            if(currentPlayItem.sequence == 56){
+                console.log(team1Name, team2Name, 'team name')
+            }
             if (currentPlayItem.text.indexOf('Attempt saved') === -1 || checkSoccerTeamName(currentPlayItem.text, team2Name)) {
                 status = true;
             }
