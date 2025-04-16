@@ -80,7 +80,7 @@ export const getCheckedDS = async (req, res) => {
         team2Abbre = resList.boxscore.teams[(parseInt(team1Idx) + 1) % 2].team.abbreviation;
         team1ShortName = resList.boxscore.teams[team1Idx].team.shortDisplayName;                //team1 Short Name
         team2ShortName = resList.boxscore.teams[(parseInt(team1Idx) + 1) % 2].team.shortDisplayName;
-        
+
         // if (team1Name.includes('&')) {
         //     team1Name = team1Name.replace('&', 'and');
         // }
@@ -89,22 +89,21 @@ export const getCheckedDS = async (req, res) => {
         //     team2Name = team2Name.replace('&', 'and');
         // }
     }
-    
-    
+
+
     if (sportCategory == 'SOCCER') {
         if (team1Idx != -1 && resList.commentary) {
             let team1Score = 0, team2Score = 0;
-            
+
             for (let i = 0; i < resList.commentary.length; i++) {
                 // console.log(i, 'soccer item')
                 // let teamIndex = selectedTeam1s[tableIndex];
                 // let teamIndex = team1Idx;
-                
+
                 for (let j = 0; j < dataSetType.length; j++) {
+                    selectedTeamIdx = team1Idx;
                     currentPlayItem = resList.commentary[i];
-                    if (currentPlayItem.sequence == 112) {
-                        console.log(selectedTeamIdx, team1Idx,'first teamIdx')
-                    }
+                    
                     prevPlayItem = resList.commentary[i - 1];
                     var prevEventItem;
 
@@ -153,10 +152,6 @@ export const getCheckedDS = async (req, res) => {
 
                     result = handleSoccerScore(currentPlayItem, dataTypeItem, score, tableIndex, prevPlayItem, team1Name, team2Name);
                     hisList = prevHisList;
-                    
-                    if (currentPlayItem.sequence == 112) {
-                        console.log(selectedTeamIdx, team1Idx,'teamIdx')
-                    }
 
                     /* For Logos */
                     if (currentPlayItem.play) {
@@ -164,7 +159,7 @@ export const getCheckedDS = async (req, res) => {
                             selectedTeamIdx = -1
                         } else {
                             if (currentPlayItem.sequence == 112) {
-                                console.log(selectedTeamIdx, team1Idx,'sequence 112')
+                                console.log(selectedTeamIdx, team1Idx, 'sequence 112')
                             }
                             if (currentPlayItem.play.team.displayName === team1Name) {
                                 selectedTeamIdx = team1Idx;
@@ -173,10 +168,7 @@ export const getCheckedDS = async (req, res) => {
                             }
                         }
                     }
-                    
-                    if (currentPlayItem.sequence == 112) {
-                        console.log(selectedTeamIdx, team1Idx,'teamIdx')
-                    }
+
                     if (tableIndex != result.tableIndex) {
                         hisList[result.tableIndex] = [];
                     }
@@ -195,13 +187,7 @@ export const getCheckedDS = async (req, res) => {
                     if (dataTypeItem.logo) {
                         historyItem.teamIdx = parseInt(team1Idx);
                         if (dataTypeItem.logo == 2) historyItem.teamIdx = (parseInt(team1Idx) + 1) % 2;
-                        if(currentPlayItem.sequence == 112){
-                            console.log(team1Idx, 'teamIdx in Soccer')
-                        }
-                    }
-
-                    if (currentPlayItem.sequence == 112) {
-                        console.log(historyItem.teamIdx,'historyItem.teamIdx')
+                        console.log(team1Idx, 'teamIdx in Soccer')
                     }
 
                     /* set reverse teamIdx for logo */
@@ -582,7 +568,7 @@ export const getCheckedDS = async (req, res) => {
             }
         }
     }
-    
+
     res.json({
         selTeamIdx,
         tableScore,
