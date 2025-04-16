@@ -110,7 +110,7 @@ export const getCheckedDS = async (req, res) => {
                     var dataTypeItem = dataSetType[j];
                     var matchTeamId = team1Id;
 
-                    if (checkSoccerFunc(dataTypeItem, currentPlayItem, prevPlayItem, team1Id, team2Id, team1Name, team2Name, team1Abbre, team2Abbre, team1ShortName, team2ShortName, matchTeamId)) {
+                    if (checkSoccerFunc(dataTypeItem, currentPlayItem, prevPlayItem, team1Id, team2Id, team1Name, team2Name, matchTeamId)) {
                         continue;
                     }
 

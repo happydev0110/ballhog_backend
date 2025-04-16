@@ -3074,7 +3074,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
     return status;
 }
 
-export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, team1Id, team2Id, team1Name, team2Name, team1Abbre, team2Abbre, team1ShortName, team2ShortName, matchTeamId) => {
+export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, team1Id, team2Id, team1Name, team2Name, matchTeamId) => {
     let status = false;
     let team1Score, team2Score;
 
