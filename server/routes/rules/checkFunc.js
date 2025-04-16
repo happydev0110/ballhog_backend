@@ -3083,7 +3083,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Offside,') === -1 || checkSoccerTeamName(currentPlayItem.text, team1Name)) {
+            if (currentPlayItem.text.indexOf('Offside,') === -1 || !checkSoccerTeamName(currentPlayItem.text, team1Name)) {
                 status = true;
             }
         }
@@ -3093,7 +3093,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Offside,') === -1 || checkSoccerTeamName(currentPlayItem.text, team2Name)) {
+            if (currentPlayItem.text.indexOf('Offside,') === -1 || !checkSoccerTeamName(currentPlayItem.text, team2Name)) {
                 status = true;
             }
         }
@@ -3125,7 +3125,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Penalty conceded') === -1 || checkSoccerTeamName(currentPlayItem.text, team1Name)) {
+            if (currentPlayItem.text.indexOf('Penalty conceded') === -1 || !checkSoccerTeamName(currentPlayItem.text, team1Name)) {
                 status = true;
             }
         }
@@ -3135,7 +3135,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Penalty conceded') === -1 || checkSoccerTeamName(currentPlayItem.text, team2Name)) {
+            if (currentPlayItem.text.indexOf('Penalty conceded') === -1 || !checkSoccerTeamName(currentPlayItem.text, team2Name)) {
                 status = true;
             }
         }
@@ -3182,7 +3182,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Attempt saved') === -1 || checkSoccerTeamName(currentPlayItem.text, team1Name)) {
+            if (currentPlayItem.text.indexOf('Attempt saved') === -1 || !checkSoccerTeamName(currentPlayItem.text, team1Name)) {
                 status = true;
             }
         }
@@ -3196,7 +3196,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
                 console.log(currentPlayItem.text,team1Name, team2Name, 'team name')
                 console.log(checkSoccerTeamName(currentPlayItem.text, team2Name),'check Soccer TeamName')
             }
-            if (currentPlayItem.text.indexOf('Attempt saved') === -1 || checkSoccerTeamName(currentPlayItem.text, team2Name)) {
+            if (currentPlayItem.text.indexOf('Attempt saved') === -1 || !checkSoccerTeamName(currentPlayItem.text, team2Name)) {
                 status = true;
             }
         }
@@ -3206,7 +3206,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Corner,') === -1 || checkSoccerTeamName(currentPlayItem.text, team1Name)) {
+            if (currentPlayItem.text.indexOf('Corner,') === -1 || !checkSoccerTeamName(currentPlayItem.text, team1Name)) {
                 status = true;
             }
         }
@@ -3226,7 +3226,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Corner,') === -1 || checkSoccerTeamName(currentPlayItem.text, team2Name)) {
+            if (currentPlayItem.text.indexOf('Corner,') === -1 || !checkSoccerTeamName(currentPlayItem.text, team2Name)) {
                 status = true;
             }
         }
@@ -3246,7 +3246,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Attempt missed') === -1 || checkSoccerTeamName(currentPlayItem.text, team1Name)) {
+            if (currentPlayItem.text.indexOf('Attempt missed') === -1 || !checkSoccerTeamName(currentPlayItem.text, team1Name)) {
                 status = true;
             }
         }
@@ -3369,7 +3369,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Attempt blocked') === -1 || checkSoccerTeamName(currentPlayItem.text, team2Name)) {
+            if (currentPlayItem.text.indexOf('Attempt blocked') === -1 || !checkSoccerTeamName(currentPlayItem.text, team2Name)) {
                 status = true;
             }
         }
