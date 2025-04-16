@@ -227,4 +227,10 @@ export const UNVALID_SOCCER_TEAMNAME = {
         "Leganés",                              //displayName
         "Leganés"                               //shortDisplayName
     ],
+    'Bayern Munich':[
+        "FC Bayern München",
+        "MUN",                                   //Abbreviation
+        "Bayern Munich",                         //displayName
+        "Bayern",                                //shortDisplayName
+    ]
 }
