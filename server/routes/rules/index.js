@@ -71,14 +71,14 @@ export const getCheckedDS = async (req, res) => {
     let team1Score = 0;
     let team2Score = 0;
 
-    if (resList.boxscore.teams[team1Idx]) {
-        team1Id = resList.boxscore.teams[team1Idx].team.id;                                     //team1 ID
+    if (resList.boxscore.teams[parseInt(team1Idx)]) {
+        team1Id = resList.boxscore.teams[parseInt(team1Idx)].team.id;                                     //team1 ID
         team2Id = resList.boxscore.teams[(parseInt(team1Idx) + 1) % 2].team.id;                 //team2 ID
-        team1Name = resList.boxscore.teams[team1Idx].team.name;                                 //team1 Name
+        team1Name = resList.boxscore.teams[parseInt(team1Idx)].team.name;                                 //team1 Name
         team2Name = resList.boxscore.teams[(parseInt(team1Idx) + 1) % 2].team.name;
-        team1Abbre = resList.boxscore.teams[team1Idx].team.abbreviation;                        //team1 abbreviation
+        team1Abbre = resList.boxscore.teams[parseInt(team1Idx)].team.abbreviation;                        //team1 abbreviation
         team2Abbre = resList.boxscore.teams[(parseInt(team1Idx) + 1) % 2].team.abbreviation;
-        team1ShortName = resList.boxscore.teams[team1Idx].team.shortDisplayName;                //team1 Short Name
+        team1ShortName = resList.boxscore.teams[parseInt(team1Idx)].team.shortDisplayName;                //team1 Short Name
         team2ShortName = resList.boxscore.teams[(parseInt(team1Idx) + 1) % 2].team.shortDisplayName;
 
         // if (team1Name.includes('&')) {
