@@ -89,16 +89,20 @@ export const getCheckedDS = async (req, res) => {
         //     team2Name = team2Name.replace('&', 'and');
         // }
     }
-
+    
+    
     if (sportCategory == 'SOCCER') {
         if (team1Idx != -1 && resList.commentary) {
             let team1Score = 0, team2Score = 0;
-
+            
             for (let i = 0; i < resList.commentary.length; i++) {
                 // console.log(i, 'soccer item')
                 // let teamIndex = selectedTeam1s[tableIndex];
                 // let teamIndex = team1Idx;
-
+                
+                if (currentPlayItem.sequence == 112) {
+                    console.log(selectedTeamIdx, team1Idx,'first teamIdx')
+                }
                 for (let j = 0; j < dataSetType.length; j++) {
                     currentPlayItem = resList.commentary[i];
                     prevPlayItem = resList.commentary[i - 1];
