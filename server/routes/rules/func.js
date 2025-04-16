@@ -122,14 +122,17 @@ export const checkSoccerTeamName = (sentence, word) => {
     // If the team name has variations, check for all possible names in the sentence
     if (variations) {
         // Convert sentence to lowercase for case-insensitive comparison
-        const lowerCaseSentence = sentence.toLowerCase();
+        // const lowerCaseSentence = sentence.toLowerCase();
+        const lowerCaseSentence = sentence;
         
         // Check if any of the variations are found in the sentence
-        return variations.some(variation => lowerCaseSentence.includes(variation.toLowerCase()));
+        // return variations.some(variation => lowerCaseSentence.includes(variation.toLowerCase()));
+        return variations.some(variation => lowerCaseSentence.includes(variation));
     }
 
     // If the word doesn't have variations, just check if it's in the sentence
-    return sentence.toLowerCase().includes(word.toLowerCase());
+    // return sentence.toLowerCase().includes(word.toLowerCase());
+    return sentence.includes(word);
 }
 
 export const isValidDate = (dateString) => {
