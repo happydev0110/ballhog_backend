@@ -164,7 +164,6 @@ export const DATASET_TYPE_CATEGORY = {
 export const UNVALID_SOCCER_TEAMNAME = {
     'Brighton & Hove Albion': [
         'Brighton and Hove Albion',
-        "Bournemouth",
         "BHA",                                  //Abbreviation
         'Brighton & Hove Albion',               //displayName
         "Brighton"                              //shortDisplayName

@@ -3192,10 +3192,10 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if(currentPlayItem.sequence == 56){
-                console.log(currentPlayItem.text,team1Name, team2Name, 'team name')
-                console.log(checkSoccerTeamName(currentPlayItem.text, team2Name),'check Soccer TeamName')
-            }
+            // if(currentPlayItem.sequence == 56){
+            //     console.log(currentPlayItem.text,team1Name, team2Name, 'team name')
+            //     console.log(checkSoccerTeamName(currentPlayItem.text, team2Name),'check Soccer TeamName')
+            // }
             if (currentPlayItem.text.indexOf('Attempt saved') === -1 || !checkSoccerTeamName(currentPlayItem.text, team2Name)) {
                 status = true;
             }
