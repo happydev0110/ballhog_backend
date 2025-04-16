@@ -149,6 +149,10 @@ export const getCheckedDS = async (req, res) => {
 
                     result = handleSoccerScore(currentPlayItem, dataTypeItem, score, tableIndex, prevPlayItem, team1Name, team2Name);
                     hisList = prevHisList;
+                    
+                    if (currentPlayItem.sequence == 112) {
+                        console.log(selectedTeamIdx, team1Idx,'teamIdx')
+                    }
 
                     /* For Logos */
                     if (currentPlayItem.play) {
