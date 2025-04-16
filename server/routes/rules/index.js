@@ -187,7 +187,6 @@ export const getCheckedDS = async (req, res) => {
                     if (dataTypeItem.logo) {
                         historyItem.teamIdx = parseInt(team1Idx);
                         if (dataTypeItem.logo == 2) historyItem.teamIdx = (parseInt(team1Idx) + 1) % 2;
-                        console.log(team1Idx, 'teamIdx in Soccer')
                     }
 
                     /* set reverse teamIdx for logo */
