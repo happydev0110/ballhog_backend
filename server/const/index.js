@@ -199,6 +199,11 @@ export const UNVALID_SOCCER_TEAMNAME = {
         "FC Juarez",                            //displayName
         "Juarez"                                //shortDisplayName
     ],
+    'AFC Bournemouth':[
+        "BOU",                                  //Abbreviation
+        "AFC Bournemouth",                      //displayName
+        "Bournemouth"                           //shortDisplayName
+    ],
     'Atlético de San Luis': [
         'Atlético San Luis',
         "ASL",                                  //Abbreviation
