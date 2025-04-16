@@ -100,11 +100,11 @@ export const getCheckedDS = async (req, res) => {
                 // let teamIndex = selectedTeam1s[tableIndex];
                 // let teamIndex = team1Idx;
                 
-                if (currentPlayItem.sequence == 112) {
-                    console.log(selectedTeamIdx, team1Idx,'first teamIdx')
-                }
                 for (let j = 0; j < dataSetType.length; j++) {
                     currentPlayItem = resList.commentary[i];
+                    if (currentPlayItem.sequence == 112) {
+                        console.log(selectedTeamIdx, team1Idx,'first teamIdx')
+                    }
                     prevPlayItem = resList.commentary[i - 1];
                     var prevEventItem;
 
