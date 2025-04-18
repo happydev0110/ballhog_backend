@@ -103,7 +103,7 @@ export const getCheckedDS = async (req, res) => {
                 for (let j = 0; j < dataSetType.length; j++) {
                     selectedTeamIdx = team1Idx;
                     currentPlayItem = resList.commentary[i];
-                    
+
                     prevPlayItem = resList.commentary[i - 1];
                     var prevEventItem;
 
@@ -302,7 +302,7 @@ export const getCheckedDS = async (req, res) => {
                 if (i < resList.plays.length - 1) nextPlayItem = resList.plays[i + 1];
 
                 /* Special DS (NHL) */
-                if (sportCategory === 'NHL' || sportCategory === 'NHL3') {
+                if ((sportCategory === 'NHL' || sportCategory === 'NHL3') && currentPlayItem?.type?.id) {
                     if (currentPlayItem.type.id == 502) {
                         if (currentPlayItem.team) {
                             PREV_NHL_DS2 = {
@@ -502,10 +502,12 @@ export const getCheckedDS = async (req, res) => {
                     if (sportCategory === 'MLB') {
                         hisItem.time = currentPlayItem.period.displayValue.replace(new RegExp("\\b" + ' Inning' + "\\b", "gi"), '');
                     } else {
-                        if (sportCategory == 'NHL' || sportCategory == 'NHL2' || sportCategory == 'NHL3') {
-                            hisItem.time = reverseTime(currentPlayItem.clock.displayValue);
-                        } else {
-                            hisItem.time = currentPlayItem.clock.displayValue;
+                        if (currentPlayItem?.clock?.displayValue) {
+                            if (sportCategory == 'NHL' || sportCategory == 'NHL2' || sportCategory == 'NHL3') {
+                                hisItem.time = reverseTime(currentPlayItem.clock.displayValue);
+                            } else {
+                                hisItem.time = currentPlayItem.clock.displayValue;
+                            }
                         }
                     }
 
