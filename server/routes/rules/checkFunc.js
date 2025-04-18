@@ -1,15 +1,6 @@
 import { getDuraton, getTimeFromClock, isSimilar, includesSimilarWord, checkSoccerTeamName } from "./func.js";
 
 export const checkWords = (text, words) => {
-    // let status = false
-    // for (let i = 0; i < words.length; i++) {
-    //     const element = words[i];
-    //     if (text.includes(words[i])) {
-    //         status = true;
-    //         break;
-    //     }
-    // }
-    // return status;
     return words.some(word => text.includes(word));
 }
 
