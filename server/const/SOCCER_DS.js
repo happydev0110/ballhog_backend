@@ -106,7 +106,7 @@ export const SOCCER_DS = [
         teamId: -1,
         typeId: false,
         scoreValue: -1,
-        Increase: 3,
+        Increase: 4,
         rotation: true,
         logo: 1
     },

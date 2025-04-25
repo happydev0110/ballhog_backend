@@ -554,7 +554,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
         if (currentPlayItem.alternativeType === undefined || currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.toLowerCase().includes('interference') || !currentPlayItem.text.includes('struck out') || currentPlayItem.alternativeType.text.includes('stolen')) {
+            if (currentPlayItem.text.toLowerCase().includes('interference') || !currentPlayItem.text.includes('struck out') || currentPlayItem.alternativeType.text.includes('stole') || currentPlayItem.alternativeType.text.includes('to first')) {
                 status = true;
             }
         }
@@ -597,7 +597,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
         if (currentPlayItem.alternativeType === undefined || currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (!currentPlayItem.text.toLowerCase().includes('walked') || currentPlayItem.text.toLowerCase().includes('scored')) {
+            if (!currentPlayItem.text.toLowerCase().includes('walked')) {
                 status = true;
             }
         }
@@ -737,7 +737,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (!currentPlayItem.text.toLowerCase().includes('interference')) {
+            if (!currentPlayItem.text.toLowerCase().includes('interference') || currentPlayItem.alternativeType.id != 37) {
                 status = true;
             }
         }
