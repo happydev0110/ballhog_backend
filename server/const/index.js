@@ -245,5 +245,10 @@ export const UNVALID_SOCCER_TEAMNAME = {
     "Stade Rennais":[
         "Rennes",
         "Stade Rennais"
+    ],
+    "St. Louis CITY SC":[
+        "St. Louis City SC",
+        "St. Louis",
+        
     ]
 }
