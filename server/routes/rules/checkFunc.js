@@ -3384,30 +3384,12 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         } else {
             if (currentPlayItem.play.team) {
                 if (dataTypeItem.teamId) {
-                    // let team2NameUpdate = team2Name;
-                    // if (team2Name.includes('&')) {
-                    //     team2NameUpdate = team2Name.replace('&', 'and');
-                    // }
-
-                    // if (!(currentPlayItem.play.team.displayName == team2Name || currentPlayItem.play.team.displayName == team2NameUpdate)) {
-                    //     status = true;
-                    // }
-
-                    if (!isSimilar(currentPlayItem.play.team.displayName, team2Name)) {
+                    if (!checkSoccerTeamName(currentPlayItem.play.team.displayName, team2Name)) {
                         status = true
                     }
 
                 } else {
-                    // let team1NameUpdate = team1Name;
-                    // if (team1Name.includes('&')) {
-                    //     team1NameUpdate = team1Name.replace('&', 'and');
-                    // }
-
-                    // if (!(currentPlayItem.play.team.displayName == team1Name || currentPlayItem.play.team.displayName == team1NameUpdate)) {
-                    //     status = true;
-                    // }
-
-                    if (!isSimilar(currentPlayItem.play.team.displayName, team1Name)) {
+                    if (!checkSoccerTeamName(currentPlayItem.play.team.displayName, team1Name)) {
                         status = true;
                     }
                 }

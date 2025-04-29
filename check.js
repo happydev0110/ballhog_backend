@@ -142,11 +142,11 @@ function checkSoccerTeamName(sentence, word) {
   return sentence.includes(word);
 }
 
-console.log(checkSoccerTeamName("Attempt missed. Jan Paul van Hecke (Brighton and Hove Albion) header from very close range is high and wide to the right. Assisted by Yankuba Minteh with a cross following a set piece situation.", "Brighton & Hove Albion"))
+// console.log(checkSoccerTeamName("Attempt missed. Jan Paul van Hecke (Brighton and Hove Albion) header from very close range is high and wide to the right. Assisted by Yankuba Minteh with a cross following a set piece situation.", "Brighton & Hove Albion"))
 
-console.log(checkSoccerTeamName("Corner, Bournemouth. Conceded by Tariq Lamptey", "Brighton & Hove Albion"))
+console.log(checkSoccerTeamName("Brighton and Hove Albion", "Brighton & Hove Albion"))
 
-console.log(checkSoccerTeamName("Corner, FC Bayern München. Conceded by Francesco Acerbi.", "Bayern Munich"))
+// console.log(checkSoccerTeamName("Corner, FC Bayern München. Conceded by Francesco Acerbi.", "Bayern Munich"))
 
 // console.log(checkSoccerTeamName("Attempt saved. Aymen Sliti (Feyenoord) left footed shot from outside the box is saved in the centre of the goal. Assisted by Gijs Smal.", "FEY"))
 
