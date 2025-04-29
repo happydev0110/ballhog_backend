@@ -554,7 +554,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
         if (currentPlayItem.alternativeType === undefined || currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.toLowerCase().includes('interference') || !currentPlayItem.text.includes('struck out') || currentPlayItem.alternativeType.text.includes('stole') || currentPlayItem.alternativeType.text.includes('to first')) {
+            if (currentPlayItem.text.toLowerCase().includes('interference') || !currentPlayItem.text.includes('struck out') || currentPlayItem.text.includes('stole') || currentPlayItem.text.includes('to first')) {
                 status = true;
             }
         }
