@@ -737,7 +737,7 @@ export const checkFunc = (sportCategory, dataTypeItem, currentPlayItem, prevPlay
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (!currentPlayItem.text.toLowerCase().includes('interference') || currentPlayItem.alternativeType.id != 37) {
+            if (!currentPlayItem.text.toLowerCase().includes('catcher')) {
                 status = true;
             }
         }
