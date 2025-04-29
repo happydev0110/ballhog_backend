@@ -237,5 +237,9 @@ export const UNVALID_SOCCER_TEAMNAME = {
         "INT",                                  //Abbreviation
         "Internazionale",                       //displayName
         "Inter Milan"                           //shortDisplayName
+    ],
+    "AS Monaco":[
+        "Monaco",
+        "MON"
     ]
 }
