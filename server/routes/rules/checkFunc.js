@@ -3096,7 +3096,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Foul by') === -1) {
+            if (currentPlayItem.text.indexOf('Foul by') === -1 || !checkSoccerTeamName(currentPlayItem.text, team1Name)) {
                 status = true;
             }
         }
@@ -3106,7 +3106,7 @@ export const checkSoccerFunc = (dataTypeItem, currentPlayItem, prevPlayItem, tea
         if (currentPlayItem.text === undefined) {
             status = true;
         } else {
-            if (currentPlayItem.text.indexOf('Foul by') === -1) {
+            if (currentPlayItem.text.indexOf('Foul by') === -1 || !checkSoccerTeamName(currentPlayItem.text, team2Name)) {
                 status = true;
             }
         }

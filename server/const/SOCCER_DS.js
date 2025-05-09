@@ -49,7 +49,7 @@ export const SOCCER_DS = [
     },
     {//DataSet7 FT1
         no: 'SOCCER-DS7',
-        teamId: false,
+        teamId: -1,
         typeId: 66,
         scoreValue: -1,
         Increase: false,
@@ -58,7 +58,7 @@ export const SOCCER_DS = [
     },
     {//DataSet8 FT2
         no: 'SOCCER-DS8',
-        teamId: true,
+        teamId: -1,
         typeId: 66,
         scoreValue: -1,
         Increase: 2,
@@ -205,7 +205,7 @@ export const SOCCER_DS = [
         teamId: true,
         typeId: false,
         scoreValue: -1,
-        Increase: 3,
+        Increase: 6,
         rotation: false,
         logo: 2
     },
@@ -214,7 +214,7 @@ export const SOCCER_DS = [
         teamId: true,
         typeId: 114,
         scoreValue: -1,
-        Increase: 4,
+        Increase: 6,
         rotation: false,
         logo: 1
     },
