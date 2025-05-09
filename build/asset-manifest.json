@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e3a72799.css",
-    "main.js": "/static/js/main.a75d859c.js",
+    "main.js": "/static/js/main.57f0890e.js",
     "static/js/453.f6abbd88.chunk.js": "/static/js/453.f6abbd88.chunk.js",
     "static/media/Playformoney.mp4": "/static/media/Playformoney.f455add0e6616850c1db.mp4",
     "static/media/BallhogIntro.mp4": "/static/media/BallhogIntro.d1b008f82e99072472b3.mp4",
@@ -75,11 +75,11 @@
     "static/media/arrow_top_right.svg": "/static/media/arrow_top_right.bb7738adcd1a4de501ad090e77627343.svg",
     "static/media/dottedline.svg": "/static/media/dottedline.6ee5cd75b3703bcb67be.svg",
     "main.e3a72799.css.map": "/static/css/main.e3a72799.css.map",
-    "main.a75d859c.js.map": "/static/js/main.a75d859c.js.map",
+    "main.57f0890e.js.map": "/static/js/main.57f0890e.js.map",
     "453.f6abbd88.chunk.js.map": "/static/js/453.f6abbd88.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e3a72799.css",
-    "static/js/main.a75d859c.js"
+    "static/js/main.57f0890e.js"
   ]
 }
